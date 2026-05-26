@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NTRA Pty Ltd</title>
+<meta name="description" content="NTRA Pty Ltd is an independent Australian company based in Newcastle, New South Wales.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="NTRA Pty Ltd">
+<meta property="og:description" content="An independent Australian company based in Newcastle.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://liferbirding.com/ntra">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Nunito:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* Brand tokens — Lifer Brand Book v1.1, applied to NTRA corporate page */
+  :root {
+    --deep-eucalyptus: #2D5F3E;
+    --sandstone: #FAF5EE;
+    --charcoal: #2C2416;
+    --gum-grey: #6D6D78;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    background-color: var(--sandstone);
+    color: var(--charcoal);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 1.5rem 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .page {
+      padding: 5rem 2rem 3rem;
+    }
+  }
+
+  /* NTRA wordmark header */
+  .brand {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    .brand {
+      margin-bottom: 5rem;
+    }
+  }
+
+  .wordmark {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 1.75rem;
+    color: var(--charcoal);
+    letter-spacing: 0.02em;
+  }
+
+  @media (min-width: 768px) {
+    .wordmark {
+      font-size: 2rem;
+    }
+  }
+
+  .wordmark-suffix {
+    font-weight: 400;
+    color: var(--gum-grey);
+    margin-left: 0.4em;
+    letter-spacing: 0;
+  }
+
+  /* Content blocks */
+  .content {
+    max-width: 640px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .content {
+      gap: 3.5rem;
+    }
+  }
+
+  .block h2 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--deep-eucalyptus);
+    margin-bottom: 0.875rem;
+  }
+
+  .block p {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--charcoal);
+  }
+
+  @media (min-width: 768px) {
+    .block p {
+      font-size: 1.0625rem;
+    }
+  }
+
+  /* Company details list */
+  .details {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .details li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.875rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .details li:last-child {
+    border-bottom: none;
+  }
+
+  @media (min-width: 600px) {
+    .details li {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+  }
+
+  .details .label {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gum-grey);
+  }
+
+  .details .value {
+    font-size: 0.9375rem;
+    color: var(--charcoal);
+  }
+
+  .details a {
+    color: var(--deep-eucalyptus);
+    text-decoration: none;
+  }
+
+  .details a:hover {
+    text-decoration: underline;
+  }
+
+  /* Back link */
+  .back {
+    display: inline-block;
+    margin-top: 3rem;
+    font-size: 0.875rem;
+    color: var(--deep-eucalyptus);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .back:hover {
+    text-decoration: underline;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 6rem;
+    padding-top: 2rem;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    font-size: 0.8125rem;
+    color: var(--gum-grey);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .footer {
+      margin-top: 8rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="brand">
+    <p class="wordmark">NTRA<span class="wordmark-suffix">Pty Ltd</span></p>
+  </header>
+
+  <main class="content">
+
+    <section class="block">
+      <h2>About</h2>
+      <p>NTRA Pty Ltd is an independent Australian company based in Newcastle, New South Wales. Lifer is our current project.</p>
+    </section>
+
+    <section class="block">
+      <h2>Company details</h2>
+      <ul class="details">
+        <li>
+          <span class="label">Legal name</span>
+          <span class="value">NTRA Pty Ltd</span>
+        </li>
+        <li>
+          <span class="label">ACN</span>
+          <span class="value">697 386 351</span>
+        </li>
+        <li>
+          <span class="label">Type</span>
+          <span class="value">Australian Private Company</span>
+        </li>
+        <li>
+          <span class="label">Headquarters</span>
+          <span class="value">Newcastle, NSW, Australia</span>
+        </li>
+        <li>
+          <span class="label">Contact</span>
+          <span class="value"><a href="mailto:support@liferbirding.com">support@liferbirding.com</a></span>
+        </li>
+      </ul>
+    </section>
+
+    <a href="/" class="back">← Back to Lifer</a>
+
+  </main>
+
+  <footer class="footer">
+    © 2026 NTRA Pty Ltd
+  </footer>
+
+</div>
+
+</body>
+</html>

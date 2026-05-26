@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lifer</title>
+<meta name="description" content="Lifer is a bird-watching app for iOS and Android, designed for Australia. In development for launch in 2026.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Lifer">
+<meta property="og:description" content="A bird-watching app for Australia. In development.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://liferbirding.com">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/icon.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Nunito:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* Brand tokens — Lifer Brand Book v1.1 */
+  :root {
+    --deep-eucalyptus: #2D5F3E;
+    --golden-wattle: #E8A838;
+    --sandstone: #FAF5EE;
+    --charcoal: #2C2416;
+    --gum-grey: #6D6D78;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    background-color: var(--sandstone);
+    color: var(--charcoal);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 1.5rem 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .page {
+      padding: 5rem 2rem 3rem;
+    }
+  }
+
+  /* Top brand block — mark + wordmark */
+  .brand {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    .brand {
+      margin-bottom: 6rem;
+    }
+  }
+
+  .icon {
+    width: 88px;
+    height: 88px;
+    margin: 0 auto 0.75rem;
+    border-radius: 18px;
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    .icon {
+      width: 104px;
+      height: 104px;
+      border-radius: 20px;
+    }
+  }
+
+  .wordmark {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 1.625rem;
+    color: var(--charcoal);
+    letter-spacing: -0.01em;
+  }
+
+  /* Tagline / evocative line */
+  .tagline {
+    max-width: 640px;
+    margin: 0 auto 5rem;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 4vw, 2.125rem);
+    line-height: 1.25;
+    color: var(--charcoal);
+    letter-spacing: -0.015em;
+  }
+
+  @media (min-width: 768px) {
+    .tagline {
+      margin-bottom: 7rem;
+    }
+  }
+
+  /* Factual block */
+  .content {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .block h2 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--deep-eucalyptus);
+    margin-bottom: 0.875rem;
+  }
+
+  .block p {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--charcoal);
+  }
+
+  @media (min-width: 768px) {
+    .block p {
+      font-size: 1.0625rem;
+    }
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 6rem;
+    padding-top: 2rem;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    font-size: 0.8125rem;
+    color: var(--gum-grey);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  @media (min-width: 768px) {
+    .footer {
+      margin-top: 8rem;
+    }
+  }
+
+  .footer-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  @media (min-width: 600px) {
+    .footer-row {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.25rem;
+  }
+
+  .footer a {
+    color: var(--gum-grey);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .footer a:hover {
+    color: var(--deep-eucalyptus);
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="brand">
+    <img src="/icon.png" alt="Lifer" class="icon">
+    <p class="wordmark">Lifer</p>
+  </header>
+
+  <p class="tagline">Better than your grandad's birdwatching.</p>
+
+  <main class="content">
+    <section class="block">
+      <h2>About Lifer</h2>
+      <p>Lifer is a bird-watching app for iOS and Android, designed to help people in Australia identify, collect, and learn about the birds around them. In development for launch in 2026.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-row">
+      <span>© 2026 Lifer — a project by <a href="/ntra">NTRA Pty Ltd</a></span>
+      <div class="footer-links">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="mailto:support@liferbirding.com">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
