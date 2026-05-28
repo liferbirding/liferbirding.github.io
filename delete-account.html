@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete Your Lifer Account</title>
+<meta name="description" content="How to permanently delete your Lifer account and associated data. Lifer is a project by NTRA Pty Ltd.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Delete Your Lifer Account">
+<meta property="og:description" content="How to permanently delete your Lifer account and associated data.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://liferbirding.com/delete-account">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/icon.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Nunito:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* Brand tokens — Lifer Brand Book v1.1 */
+  :root {
+    --deep-eucalyptus: #2D5F3E;
+    --golden-wattle: #E8A838;
+    --sandstone: #FAF5EE;
+    --charcoal: #2C2416;
+    --gum-grey: #6D6D78;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    background-color: var(--sandstone);
+    color: var(--charcoal);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 1.5rem 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .page {
+      padding: 5rem 2rem 3rem;
+    }
+  }
+
+  /* Header */
+  .brand {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .brand {
+      margin-bottom: 4rem;
+    }
+  }
+
+  .icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 0.75rem;
+    border-radius: 16px;
+    display: block;
+  }
+
+  .wordmark {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--charcoal);
+    letter-spacing: -0.01em;
+  }
+
+  /* Content */
+  .content {
+    max-width: 680px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  h1 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.75rem, 4vw, 2.375rem);
+    line-height: 1.2;
+    color: var(--charcoal);
+    letter-spacing: -0.015em;
+    margin-bottom: 1rem;
+  }
+
+  .intro {
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--charcoal);
+    margin-bottom: 3rem;
+  }
+
+  section {
+    margin-bottom: 2.75rem;
+  }
+
+  h2 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--charcoal);
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--charcoal);
+    margin-bottom: 1rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  ol, ul {
+    margin: 0 0 1rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+  }
+
+  li:last-child {
+    margin-bottom: 0;
+  }
+
+  a {
+    color: var(--deep-eucalyptus);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  /* Steps callout box */
+  .steps-box {
+    background-color: #FFFFFF;
+    border-radius: 14px;
+    padding: 1.75rem 1.75rem 1.75rem 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .steps-box ol {
+    margin-bottom: 0;
+  }
+
+  /* Divider */
+  .divider {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.08);
+    border: none;
+    margin: 0 0 2.75rem 0;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    font-size: 0.8125rem;
+    color: var(--gum-grey);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .footer {
+      margin-top: 6rem;
+    }
+  }
+
+  .footer a {
+    color: var(--gum-grey);
+    font-weight: 400;
+  }
+
+  .footer a:hover {
+    color: var(--deep-eucalyptus);
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="brand">
+    <img src="/icon.png" alt="Lifer" class="icon">
+    <p class="wordmark">Lifer</p>
+  </header>
+
+  <main class="content">
+
+    <h1>Delete your Lifer account</h1>
+    <p class="intro">We respect your right to delete your data. This page explains how to delete your Lifer account and what happens to the data associated with it.</p>
+
+    <section>
+      <h2>How to delete your account in the app</h2>
+      <div class="steps-box">
+        <ol>
+          <li>Open the Lifer app</li>
+          <li>Tap the menu icon</li>
+          <li>Tap <strong>Settings</strong></li>
+          <li>Scroll to <strong>Account</strong></li>
+          <li>Tap <strong>Delete Account</strong></li>
+          <li>Confirm deletion</li>
+          <li>Your account and associated data will be permanently deleted</li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <h2>Can't access the app? Request deletion by email</h2>
+      <p>If you can't access your account in the app, email <a href="mailto:privacy@liferbirding.com">privacy@liferbirding.com</a> with:</p>
+      <ul>
+        <li>Your account email address</li>
+        <li>A statement requesting account deletion</li>
+        <li>Your name, for verification</li>
+      </ul>
+      <p>We process deletion requests within 30 days.</p>
+    </section>
+
+    <hr class="divider">
+
+    <section>
+      <h2>What is permanently deleted</h2>
+      <p>When you delete your account, we permanently and irreversibly remove:</p>
+      <ul>
+        <li>Your login (you can no longer sign in)</li>
+        <li>Your profile details: name, email, username, profile photo, and bio</li>
+        <li>Your saved location data</li>
+        <li>Your capture photos</li>
+        <li>Your badges and achievements</li>
+        <li>Your leaderboard placements</li>
+        <li>Your notification and device settings</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>What is kept in anonymised form</h2>
+      <p>To keep community statistics and species data accurate, we retain your capture records (the species, date, and location of each sighting) in an anonymised form. Once your account is deleted, these records are no longer linked to you, your name, or your email, and cannot be used to identify you.</p>
+      <p>If you would prefer that this anonymised data is also erased, you can request a full erasure (see below).</p>
+    </section>
+
+    <section>
+      <h2>Request a full erasure</h2>
+      <p>If you want everything removed, including your anonymised capture records, email <a href="mailto:privacy@liferbirding.com">privacy@liferbirding.com</a> and ask for a full erasure under the Australian Privacy Act. We'll remove all remaining records and confirm when it's done.</p>
+    </section>
+
+    <section>
+      <h2>Operational data we retain briefly</h2>
+      <p>For security and reliability, a limited amount of operational data persists for a short time after deletion, then is automatically removed:</p>
+      <ul>
+        <li>Crash and diagnostic data, retained for up to 30 days</li>
+        <li>Server logs, retained for up to 30 days for security purposes</li>
+        <li>Aggregated, anonymised analytics that are not linked to your identity</li>
+      </ul>
+      <p>None of this data can identify you personally.</p>
+    </section>
+
+    <section>
+      <h2>Questions?</h2>
+      <p>Email <a href="mailto:privacy@liferbirding.com">privacy@liferbirding.com</a> and we'll help.</p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    © 2026 Lifer — a project by <a href="/ntra">NTRA Pty Ltd</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a>
+  </footer>
+
+</div>
+
+</body>
+</html>
