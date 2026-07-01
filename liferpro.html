@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lifer Pro Perks — coming soon</title>
+<meta name="description" content="Lifer Pro Perks is coming — a members-only giveaways program for Lifer Pro. Draws for birding gear and merch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="lifer-site.css">
+<style>
+/* ============ LIFER PRO PERKS — coming-soon placeholder ============ */
+html,body{height:100%;}
+body{overflow:hidden;}
+
+.perks-screen{
+  min-height:100dvh;
+  background:var(--night);color:var(--night-text);
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:clamp(28px,6vw,64px);
+}
+.perks-screen::before{
+  content:"";position:absolute;inset:0;background:url('img/grain.png');background-size:200px;
+  opacity:.5;mix-blend-mode:overlay;pointer-events:none;
+}
+.perks-screen .glow{
+  position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);
+  width:min(720px,130%);aspect-ratio:1.5;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse at center, rgba(232,168,56,.26), transparent 62%);
+}
+.perks-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;}
+
+.perks-badge{width:clamp(88px,14vw,124px);height:clamp(88px,14vw,124px);}
+.perks-badge svg{width:100%;height:100%;display:block;overflow:visible;}
+
+.perks-soon{
+  display:inline-flex;align-items:center;gap:9px;margin-top:clamp(22px,3.4vw,34px);
+  background:rgba(232,168,56,.10);
+  border:1px solid rgba(232,168,56,.45);border-radius:999px;padding:9px 18px;
+  font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--wattle);white-space:nowrap;
+}
+.perks-soon .spark{width:13px;height:13px;flex:none;fill:var(--wattle);animation:sparkPulse 2.4s var(--ease) infinite;}
+@keyframes sparkPulse{0%,100%{opacity:.5;transform:scale(.88);}55%{opacity:1;transform:scale(1.06);}}
+@media (prefers-reduced-motion:reduce){.perks-soon .spark{animation:none;transform:none;opacity:1;}}
+
+.perks-screen h1{
+  color:#fff;margin-top:clamp(16px,2.4vw,24px);
+  font-size:clamp(38px,8.5vmin,80px);letter-spacing:-.03em;line-height:1.0;max-width:14ch;
+}
+.perks-screen h1 .gold{color:var(--wattle);}
+.perks-screen .lede{
+  margin-top:clamp(18px,2.4vw,26px);max-width:38ch;
+  color:var(--night-text-2);font-size:clamp(15px,1.6vw,18px);line-height:1.6;
+}
+
+.perks-foot{
+  position:absolute;left:0;right:0;bottom:clamp(20px,4vh,34px);z-index:1;
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+}
+.perks-foot .brand{display:flex;align-items:center;gap:9px;}
+.perks-foot .brand .mark{width:26px;height:26px;border-radius:7px;}
+.perks-foot .brand .wordmark{font-family:var(--display);font-weight:900;font-size:17px;letter-spacing:-.03em;color:#fff;}
+.perks-foot .small{font-family:var(--body);font-size:11px;letter-spacing:.02em;color:var(--night-text-muted);}
+</style>
+</head>
+<body>
+
+<main class="perks-screen" data-screen-label="Coming soon">
+  <span class="glow"></span>
+  <div class="perks-inner">
+    <div class="perks-badge" id="proBadge" aria-hidden="true"></div>
+    <span class="perks-soon"><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"></path></svg><span class="lbl">Coming soon</span></span>
+    <h1>Lifer Pro <span class="gold">Perks</span></h1>
+    <p class="lede">Exclusive rewards for Lifer Pro members. Stay tuned.</p>
+  </div>
+
+  <div class="perks-foot">
+    <a class="brand" href="index.html" aria-label="Lifer home">
+      <img class="mark" src="img/mark.png" alt="">
+      <span class="wordmark">Lifer</span>
+    </a>
+    <span class="small">Australia only · Full terms at launch</span>
+  </div>
+</main>
+
+<script>
+// Lifer Pro — the Wattle Gem (size-parametric, accent-aware)
+function renderProGem(){
+  const cs = getComputedStyle(document.documentElement);
+  const mid = (cs.getPropertyValue('--wattle').trim() || '#EFA21F');
+  const dk  = (cs.getPropertyValue('--wattle-dk').trim() || '#C8821A');
+  const lt  = `color-mix(in srgb, ${mid} 52%, #ffffff)`;
+  const svg = `<svg viewBox="0 0 100 100" style="width:100%;height:100%;display:block;overflow:visible;filter:drop-shadow(0 6px 15px ${mid}66)">
+    <defs><linearGradient id="pgemg" x1="0" y1="0" x2="0.7" y2="1">
+      <stop offset="0" stop-color="${lt}"/><stop offset=".5" stop-color="${mid}"/><stop offset="1" stop-color="${dk}"/>
+    </linearGradient></defs>
+    <polygon points="50,6 88,40 50,95 12,40" fill="url(#pgemg)"/>
+    <polygon points="50,6 64,24 50,40 36,24" fill="#fff" opacity=".30"/>
+    <polygon points="50,6 36,24 12,40" fill="#fff" opacity=".15"/>
+    <polygon points="50,6 64,24 88,40" fill="#000" opacity=".07"/>
+    <polygon points="12,40 50,40 50,95" fill="#000" opacity=".12"/>
+    <polygon points="88,40 50,40 50,95" fill="#000" opacity=".24"/>
+    <line x1="12" y1="40" x2="88" y2="40" stroke="#fff" stroke-opacity=".42" stroke-width="1.1"/>
+    <line x1="50" y1="6" x2="50" y2="95" stroke="#fff" stroke-opacity=".18" stroke-width="0.9"/>
+    <polygon points="50,6 88,40 50,95 12,40" fill="none" stroke="${dk}" stroke-opacity=".55" stroke-width="1.2"/>
+  </svg>`;
+  document.getElementById('proBadge').innerHTML = svg;
+}
+renderProGem();
+</script>
+
+<!-- ===================== TWEAKS ===================== -->
+<div id="tweaks-root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel">
+const { useTweaks, TweaksPanel, TweakSection, TweakColor, TweakRadio } = window;
+
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "accent": [
+    "#EFA21F",
+    "#C8821A"
+  ],
+  "soonLabel": "coming"
+}/*EDITMODE-END*/;
+
+function TweaksApp() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+  React.useEffect(() => {
+    const [bright, dark] = Array.isArray(t.accent) ? t.accent : [t.accent, t.accent];
+    document.documentElement.style.setProperty('--wattle', bright);
+    document.documentElement.style.setProperty('--wattle-dk', dark);
+    if (typeof renderProGem === 'function') renderProGem();
+  }, [t.accent]);
+
+  React.useEffect(() => {
+    const el = document.querySelector('.perks-soon .lbl');
+    if (!el) return;
+    el.textContent = t.soonLabel === 'wip' ? 'In the works' : t.soonLabel === 'soon2026' ? 'Coming 2026' : 'Coming soon';
+  }, [t.soonLabel]);
+
+  return (
+    <TweaksPanel title="Tweaks">
+      <TweakSection label="Brand">
+        <TweakColor label="Accent" value={t.accent}
+          options={[["#EFA21F", "#C8821A"], ["#E0801C", "#B26412"], ["#C4734F", "#A85733"]]}
+          onChange={(v) => setTweak('accent', v)} />
+      </TweakSection>
+      <TweakSection label="Status">
+        <TweakRadio label="Label" value={t.soonLabel}
+          options={[{ value: 'coming', label: 'Coming soon' }, { value: 'wip', label: 'In the works' }, { value: 'soon2026', label: 'Coming 2026' }]}
+          onChange={(v) => setTweak('soonLabel', v)} />
+      </TweakSection>
+    </TweaksPanel>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('tweaks-root')).render(<TweaksApp />);
+</script>
+</body>
+</html>
