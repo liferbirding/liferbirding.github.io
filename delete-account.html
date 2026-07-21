@@ -19,7 +19,7 @@
 .del-card h3{font-size:22px;margin-top:8px;}
 .del-card p{margin-top:14px;color:var(--ink-2);font-size:15px;line-height:1.65;}
 .del-steps{list-style:none;margin:20px 0 0;padding:0;counter-reset:s;display:flex;flex-direction:column;gap:14px;}
-.del-steps li{position:relative;padding-left:42px;color:var(--ink-2);font-size:15px;line-height:1.5;counter-increment:s;min-height:30px;display:flex;align-items:center;}
+.del-steps li{position:relative;padding-left:42px;padding-top:4px;color:var(--ink-2);font-size:15px;line-height:1.5;counter-increment:s;min-height:30px;}
 .del-steps li::before{content:counter(s);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--sand);font-family:var(--display);font-weight:800;font-size:14px;display:grid;place-items:center;}
 .del-steps li b{color:var(--ink);font-weight:600;}
 .what-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.4vw,28px);margin-top:24px;}
@@ -50,6 +50,7 @@
       <a href="index.html#discover">Discover</a>
       <a href="index.html#local">Your patch</a>
       <a href="where-to-go.html">Directory</a>
+    </nav>
     <div class="header-cta">
       <a class="btn btn-wattle" href="index.html#get">Get Lifer</a>
       <button class="menu-toggle" aria-label="Menu">
@@ -69,7 +70,7 @@
   </div>
 </section>
 
-<div class="wrap" style="padding-block:clamp(40px,6vw,72px);max-width:980px;">
+<div class="wrap" style="padding-block:clamp(40px,6vw,72px);">
   <div class="legal-body" style="max-width:none;" data-screen-label="Delete account body">
     <section style="padding-top:0;">
       <h2><span class="ix">01</span>Two ways to delete</h2>
@@ -89,7 +90,7 @@
         <div class="del-card">
           <span class="step-no">No longer have the app?</span>
           <h3>Delete by email</h3>
-          <p>Send a request from the email address on your account to <a href="mailto:privacy@liferbirding.com?subject=Delete%20my%20account">privacy@liferbirding.com</a>, or use the form below. We'll verify it's you, delete your account, and confirm when it's done — within 30 days.</p>
+          <p>Send a request from the email address on your account to <a href="mailto:privacy@liferbirding.com?subject=Delete%20my%20account">privacy@liferbirding.com</a>, or follow the steps below. We'll verify it's you, delete your account, and confirm when it's done — within 30 days.</p>
         </div>
       </div>
     </section>
@@ -119,18 +120,18 @@
 
     <section>
       <h2><span class="ix">03</span>Request deletion by email</h2>
-      <p>Don't have the app handy? Fill this in and it'll open an email to our privacy team. We only act on requests from the account's own email address.</p>
-      <form class="del-form" action="mailto:privacy@liferbirding.com" method="post" enctype="text/plain" data-screen-label="Delete request form">
-        <label for="email">Account email</label>
-        <input type="email" id="email" name="email" placeholder="you@example.com" required>
-        <label for="reason">Anything you'd like us to know? (optional)</label>
-        <textarea id="reason" name="reason" rows="3" placeholder="Optional — it helps us make Lifer better."></textarea>
-        <div class="check">
-          <input type="checkbox" id="confirm" name="confirm" required>
-          <label for="confirm" style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--ink-2);margin:0;">I understand this permanently deletes my account and all my captures.</label>
-        </div>
-        <button type="submit" class="btn btn-ink">Request account deletion</button>
-      </form>
+      <p>Don't have the app handy? You can ask us to delete your account by email. So we can verify it's really you, send your request <strong>from the email address on your Lifer account</strong>.</p>
+      <div class="del-card" style="margin-top:8px;">
+        <span class="step-no">No app needed</span>
+        <h3>Email our privacy team</h3>
+        <ol class="del-steps">
+          <li>Email <a href="mailto:privacy@liferbirding.com?subject=Delete%20my%20account"><b>privacy@liferbirding.com</b></a>.</li>
+          <li>Send it from the <b>email address on your account</b>.</li>
+          <li>Use the subject <b>“Delete my account”</b>.</li>
+          <li>In the body, include your <b>account email</b> and a line confirming you <b>understand deletion is permanent</b>.</li>
+        </ol>
+        <p>We'll verify it's you, delete your account, and confirm when it's done — within 30 days.</p>
+      </div>
     </section>
 
     <section>
