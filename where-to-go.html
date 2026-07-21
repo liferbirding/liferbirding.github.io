@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where to go birding — Lifer</title>
+<meta name="description" content="A growing directory of great places to go birding across Australia, New Zealand, the United States and Canada — with founding venues being added for our 1 August launch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="lifer-site.css">
+<style>
+/* ---------- WHERE TO GO ---------- */
+.wtg-intro{max-width:760px;margin:0 auto clamp(36px,5vw,56px);}
+.wtg-intro p{color:var(--ink-2);font-size:clamp(16px,1.5vw,19px);line-height:1.65;margin-top:18px;}
+.wtg-intro p + p{margin-top:14px;}
+
+.wtg-legend{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:16px 20px;margin:0 auto clamp(40px,6vw,64px);max-width:760px;box-shadow:var(--shadow);
+}
+.wtg-legend .lg-mark{display:inline-flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2);}
+.wtg-legend .lg-mark b{font-family:var(--display);font-weight:800;color:var(--ink);}
+.wtg-legend .sep{width:1px;height:22px;background:var(--line-2);}
+.pro-gem{width:18px;height:18px;flex:none;display:block;}
+
+.wtg-countries{display:flex;flex-direction:column;gap:clamp(20px,2.6vw,30px);}
+.country{
+  background:var(--card);border:1px solid var(--line);border-radius:20px;
+  padding:clamp(24px,3vw,40px);box-shadow:var(--shadow);position:relative;overflow:hidden;
+}
+.country-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:22px;}
+.country-head .flag{font-size:26px;line-height:1;}
+.country-head h2{font-size:clamp(24px,2.8vw,36px);letter-spacing:-.02em;margin:0;}
+.country-head .ct{margin-left:auto;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gum);}
+.regions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;}
+.regions .rg{
+  display:inline-flex;align-items:center;gap:8px;background:var(--sand-2);
+  border:1px solid var(--line-2);color:var(--ink-2);border-radius:999px;
+  padding:9px 16px;font-size:14px;font-weight:500;
+}
+.regions .rg .d{width:8px;height:8px;border-radius:50%;background:var(--euca);flex:none;}
+.country-empty{
+  display:flex;align-items:center;gap:14px;
+  border-top:1px dashed var(--line-2);padding-top:22px;
+  color:var(--gum);font-size:14.5px;line-height:1.5;
+}
+.country-empty .badge{
+  flex:none;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--wattle-dk);background:var(--wattle-lt);border-radius:999px;padding:6px 12px;font-weight:600;
+}
+
+.wtg-partner{
+  margin-top:clamp(40px,6vw,64px);background:var(--ink);color:#fff;border-radius:20px;
+  padding:clamp(28px,3.6vw,48px);display:flex;align-items:center;justify-content:space-between;
+  gap:30px;flex-wrap:wrap;position:relative;overflow:hidden;
+}
+.wtg-partner::before{content:"";position:absolute;inset:0;background:url('img/grain.png');background-size:200px;opacity:.45;mix-blend-mode:overlay;pointer-events:none;}
+.wtg-partner .pt-copy{position:relative;z-index:1;max-width:44ch;}
+.wtg-partner h3{color:#fff;font-family:var(--display);font-weight:800;font-size:clamp(20px,2.4vw,30px);letter-spacing:-.02em;margin:0;}
+.wtg-partner p{color:var(--night-text-2);font-size:15px;line-height:1.6;margin:12px 0 0;}
+.wtg-partner .btn{position:relative;z-index:1;}
+@media(max-width:600px){.wtg-legend{flex-direction:column;align-items:flex-start;gap:10px;}.wtg-legend .sep{display:none;}}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader" data-screen-label="Header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Lifer home">
+      <img class="mark" src="img/mark.png" alt="Lifer">
+      <span class="wordmark">Lifer</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#discover">Discover</a>
+      <a href="index.html#local">Your patch</a>
+      <a href="where-to-go.html" aria-current="page">Directory</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-wattle" href="index.html#get">Get Lifer</a>
+      <button class="menu-toggle" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="legal-hero" data-screen-label="Where to go hero">
+  <div class="wrap">
+    <span class="overline">Directory</span>
+    <h1>Where to go birding</h1>
+    <p class="lede">The best patches, reserves and hotspots for finding birds.</p>
+  </div>
+</section>
+
+<div class="wrap section">
+  <div class="wtg-intro reveal">
+    <p>Great birding starts with knowing where to look. This directory gathers the wetlands, woodlands, coastlines and city parks worth the trip — organised by country and region, so you can plan a morning out wherever you are.</p>
+    <p>We're building it with local venues, reserves and birding partners. Some offer perks for <strong>Lifer&nbsp;Pro</strong> members, marked with the gold gem below.</p>
+  </div>
+
+  <div class="wtg-legend reveal">
+    <span class="lg-mark">
+      <svg class="pro-gem" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="wg" x1="0" y1="0" x2="0.7" y2="1"><stop offset="0" stop-color="#FBD98A"/><stop offset=".5" stop-color="#EFA21F"/><stop offset="1" stop-color="#B87415"/></linearGradient></defs><polygon points="50,6 88,40 50,95 12,40" fill="url(#wg)"/><polygon points="50,6 64,24 50,40 36,24" fill="#fff" opacity=".30"/><polygon points="12,40 50,40 50,95" fill="#000" opacity=".12"/><polygon points="88,40 50,40 50,95" fill="#000" opacity=".24"/><polygon points="50,6 88,40 50,95 12,40" fill="none" stroke="#8C5A0A" stroke-opacity=".5" stroke-width="1.2"/></svg>
+      <span><b>Lifer&nbsp;Pro venue</b> — offers perks for subscribers</span>
+    </span>
+  </div>
+
+  <div class="wtg-countries">
+    <!-- AUSTRALIA -->
+    <section class="country reveal" data-screen-label="Australia">
+      <div class="country-head"><span class="flag">🇦🇺</span><h2>Australia</h2><span class="ct">8 states &amp; territories</span></div>
+      <div class="regions">
+        <span class="rg"><span class="d"></span>New South Wales</span>
+        <span class="rg"><span class="d"></span>Victoria</span>
+        <span class="rg"><span class="d"></span>Queensland</span>
+        <span class="rg"><span class="d"></span>South Australia</span>
+        <span class="rg"><span class="d"></span>Western Australia</span>
+        <span class="rg"><span class="d"></span>Tasmania</span>
+        <span class="rg"><span class="d"></span>ACT</span>
+        <span class="rg"><span class="d"></span>Northern Territory</span>
+      </div>
+      <div class="country-empty"><span class="badge">Coming soon</span><span>Check back soon, or list your venue below.</span></div>
+    </section>
+
+    <!-- NEW ZEALAND -->
+    <section class="country reveal" data-screen-label="New Zealand">
+      <div class="country-head"><span class="flag">🇳🇿</span><h2>New Zealand</h2><span class="ct">2 islands</span></div>
+      <div class="regions">
+        <span class="rg"><span class="d"></span>Northland</span>
+        <span class="rg"><span class="d"></span>Auckland</span>
+        <span class="rg"><span class="d"></span>Wellington</span>
+        <span class="rg"><span class="d"></span>Canterbury</span>
+        <span class="rg"><span class="d"></span>Otago</span>
+        <span class="rg"><span class="d"></span>Fiordland</span>
+      </div>
+      <div class="country-empty"><span class="badge">Coming soon</span><span>Check back soon, or list your venue below.</span></div>
+    </section>
+
+    <!-- UNITED STATES -->
+    <section class="country reveal" data-screen-label="United States">
+      <div class="country-head"><span class="flag">🇺🇸</span><h2>United States</h2><span class="ct">by region</span></div>
+      <div class="regions">
+        <span class="rg"><span class="d"></span>Pacific Northwest</span>
+        <span class="rg"><span class="d"></span>California</span>
+        <span class="rg"><span class="d"></span>Southwest</span>
+        <span class="rg"><span class="d"></span>Great Plains</span>
+        <span class="rg"><span class="d"></span>Midwest</span>
+        <span class="rg"><span class="d"></span>Northeast</span>
+        <span class="rg"><span class="d"></span>Southeast</span>
+        <span class="rg"><span class="d"></span>Gulf Coast</span>
+      </div>
+      <div class="country-empty"><span class="badge">Coming soon</span><span>Check back soon, or list your venue below.</span></div>
+    </section>
+
+    <!-- CANADA -->
+    <section class="country reveal" data-screen-label="Canada">
+      <div class="country-head"><span class="flag">🇨🇦</span><h2>Canada</h2><span class="ct">by province</span></div>
+      <div class="regions">
+        <span class="rg"><span class="d"></span>British Columbia</span>
+        <span class="rg"><span class="d"></span>Alberta</span>
+        <span class="rg"><span class="d"></span>Ontario</span>
+        <span class="rg"><span class="d"></span>Quebec</span>
+        <span class="rg"><span class="d"></span>Maritimes</span>
+        <span class="rg"><span class="d"></span>Newfoundland</span>
+      </div>
+      <div class="country-empty"><span class="badge">Coming soon</span><span>Check back soon, or list your venue below.</span></div>
+    </section>
+  </div>
+
+  <div class="wtg-partner reveal" data-screen-label="Partner CTA">
+    <div class="pt-copy">
+      <h3>Run a reserve, hide or birding venue?</h3>
+      <p>List it in the Lifer directory and reach birders planning their next morning out.</p>
+    </div>
+      <a class="btn btn-wattle" href="mailto:chirp@liferbirding.com?subject=Venue%20listing">Get in touch</a>
+  </div>
+</div>
+</main>
+
+<footer class="site-footer" data-screen-label="Footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand" data-lockup="stacked">
+        <a class="brand brand-stacked" href="index.html" aria-label="Lifer home">
+          <img class="wordmark-stacked" src="img/wordmark-stacked-dark.svg" alt="Lifer — Capture · Collect · Compete" width="190">
+        </a>
+        <a class="brand brand-inline" href="index.html" aria-label="Lifer home">
+          <img class="mark" src="img/mark.png" alt="" width="38" height="38">
+          <span class="wordmark">Lifer</span>
+        </a>
+        <p>Built in Australia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Lifer</h4>
+        <ul>
+          <li><a href="index.html#how">How it works</a></li>
+          <li><a href="index.html#discover">Discover</a></li>
+          <li><a href="index.html#local">Your patch</a></li>
+          <li><a href="where-to-go.html">Where to go birding</a></li>
+          <li><a href="index.html#get">Get the app</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms of service</a></li>
+          <li><a href="delete-account.html">Delete your account</a></li>
+          <li><a href="mailto:chirp@liferbirding.com">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="aoc">
+      <h4>Acknowledgement of Country</h4>
+      <p>Lifer is built in Australia. Lifer acknowledges that we operate on the lands, waters and skies of many First Nations Peoples. We recognise the Traditional Owners of Country throughout Australia and their continuing connection to lands, waters and communities. We pay our respects to their Elders past and present.</p>
+    </div>
+    <div class="footer-bottom">
+      <span class="small">© 2026 Lifer. Made in Australia.</span>
+      <span class="small"><a href="ntra.html">NTRA Pty Ltd</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const header=document.getElementById('siteHeader');
+const onScroll=()=>header.classList.toggle('scrolled',window.scrollY>8);
+onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

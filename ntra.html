@@ -1,272 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NTRA Pty Ltd</title>
-<meta name="description" content="NTRA Pty Ltd is an independent Australian company based in Newcastle, New South Wales.">
-
-<!-- Open Graph -->
-<meta property="og:title" content="NTRA Pty Ltd">
-<meta property="og:description" content="An independent Australian company based in Newcastle.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://liferbirding.com/ntra">
-
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="/favicon.png">
-
-<!-- Fonts -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NTRA Pty Ltd — Lifer</title>
+<meta name="description" content="NTRA Pty Ltd is an independent Australian company based in Newcastle, New South Wales. Lifer is our current project.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Nunito:wght@600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="lifer-site.css">
 <style>
-  /* Brand tokens — Lifer Brand Book v1.1, applied to NTRA corporate page */
-  :root {
-    --deep-eucalyptus: #2D5F3E;
-    --sandstone: #FAF5EE;
-    --charcoal: #2C2416;
-    --gum-grey: #6D6D78;
-  }
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  html, body {
-    height: 100%;
-  }
-
-  body {
-    background-color: var(--sandstone);
-    color: var(--charcoal);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-weight: 400;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  .page {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding: 3rem 1.5rem 2rem;
-  }
-
-  @media (min-width: 768px) {
-    .page {
-      padding: 5rem 2rem 3rem;
-    }
-  }
-
-  /* NTRA wordmark header */
-  .brand {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-
-  @media (min-width: 768px) {
-    .brand {
-      margin-bottom: 5rem;
-    }
-  }
-
-  .wordmark {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    font-size: 1.75rem;
-    color: var(--charcoal);
-    letter-spacing: 0.02em;
-  }
-
-  @media (min-width: 768px) {
-    .wordmark {
-      font-size: 2rem;
-    }
-  }
-
-  .wordmark-suffix {
-    font-weight: 400;
-    color: var(--gum-grey);
-    margin-left: 0.4em;
-    letter-spacing: 0;
-  }
-
-  /* Content blocks */
-  .content {
-    max-width: 640px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-  }
-
-  @media (min-width: 768px) {
-    .content {
-      gap: 3.5rem;
-    }
-  }
-
-  .block h2 {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 600;
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--deep-eucalyptus);
-    margin-bottom: 0.875rem;
-  }
-
-  .block p {
-    font-size: 1rem;
-    line-height: 1.65;
-    color: var(--charcoal);
-  }
-
-  @media (min-width: 768px) {
-    .block p {
-      font-size: 1.0625rem;
-    }
-  }
-
-  /* Company details list */
-  .details {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .details li {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    padding: 0.875rem 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  }
-
-  .details li:last-child {
-    border-bottom: none;
-  }
-
-  @media (min-width: 600px) {
-    .details li {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-  }
-
-  .details .label {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 600;
-    font-size: 0.75rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--gum-grey);
-  }
-
-  .details .value {
-    font-size: 0.9375rem;
-    color: var(--charcoal);
-  }
-
-  .details a {
-    color: var(--deep-eucalyptus);
-    text-decoration: none;
-  }
-
-  .details a:hover {
-    text-decoration: underline;
-  }
-
-  /* Back link */
-  .back {
-    display: inline-block;
-    margin-top: 3rem;
-    font-size: 0.875rem;
-    color: var(--deep-eucalyptus);
-    text-decoration: none;
-    font-weight: 500;
-  }
-
-  .back:hover {
-    text-decoration: underline;
-  }
-
-  /* Footer */
-  .footer {
-    margin-top: 6rem;
-    padding-top: 2rem;
-    max-width: 640px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    font-size: 0.8125rem;
-    color: var(--gum-grey);
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
-    text-align: center;
-  }
-
-  @media (min-width: 768px) {
-    .footer {
-      margin-top: 8rem;
-    }
-  }
+.legal-body .co-table{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;}
+.legal-body .co-table li{display:flex;flex-wrap:wrap;gap:6px 18px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--ink-2);}
+.legal-body .co-table li::before{display:none;content:none;}
+.legal-body .co-table li:last-child{border-bottom:none;}
+.legal-body .co-table .k{font-family:var(--display);font-weight:700;color:var(--ink);min-width:160px;}
+.legal-body .backlink{display:inline-flex;align-items:center;gap:8px;margin-top:40px;font-weight:600;}
+.legal-body .copyline{margin-top:14px;font-size:13px;color:var(--gum);font-family:var(--mono);}
 </style>
 </head>
 <body>
 
-<div class="page">
+<header class="site-header" id="siteHeader" data-screen-label="Header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Lifer home">
+      <img class="mark" src="img/mark.png" alt="Lifer">
+      <span class="wordmark">Lifer</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#discover">Discover</a>
+      <a href="index.html#local">Your patch</a>
+      <a href="where-to-go.html">Directory</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-wattle" href="index.html#get">Get Lifer</a>
+      <button class="menu-toggle" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
 
-  <header class="brand">
-    <p class="wordmark">NTRA<span class="wordmark-suffix">Pty Ltd</span></p>
-  </header>
+<main>
+<section class="legal-hero" data-screen-label="NTRA hero">
+  <div class="wrap">
+    <span class="overline">Company</span>
+    <h1>NTRA Pty Ltd</h1>
+  </div>
+</section>
 
-  <main class="content">
-
-    <section class="block">
-      <h2>About</h2>
-      <p>NTRA Pty Ltd is an independent Australian company based in Newcastle, New South Wales. Lifer is our current project.</p>
+<div class="wrap" style="padding-block:clamp(40px,6vw,72px);max-width:820px;">
+  <div class="legal-body" style="max-width:none;" data-screen-label="NTRA body">
+    <section style="padding-top:0;">
+      <h2><span class="ix">01</span>About</h2>
+      <p>NTRA Pty Ltd is an independent Australian company based in Newcastle, New South Wales. Creator of Lifer, the birding game.</p>
     </section>
 
-    <section class="block">
-      <h2>Company details</h2>
-      <ul class="details">
-        <li>
-          <span class="label">Legal name</span>
-          <span class="value">NTRA Pty Ltd</span>
-        </li>
-        <li>
-          <span class="label">ACN</span>
-          <span class="value">697 386 351</span>
-        </li>
-        <li>
-          <span class="label">Type</span>
-          <span class="value">Australian Private Company</span>
-        </li>
-        <li>
-          <span class="label">Headquarters</span>
-          <span class="value">Newcastle, NSW, Australia</span>
-        </li>
-        <li>
-          <span class="label">Contact</span>
-          <span class="value"><a href="mailto:support@liferbirding.com">support@liferbirding.com</a></span>
-        </li>
+    <section>
+      <h2><span class="ix">02</span>Company details</h2>
+      <ul class="co-table">
+        <li><span class="k">Legal name</span><span>NTRA Pty Ltd</span></li>
+        <li><span class="k">ACN</span><span>697 386 351</span></li>
+        <li><span class="k">Type</span><span>Australian Private Company</span></li>
+        <li><span class="k">Headquarters</span><span>Newcastle, NSW, Australia</span></li>
+        <li><span class="k">Contact</span><span><a href="mailto:chirp@liferbirding.com">chirp@liferbirding.com</a></span></li>
       </ul>
     </section>
-
-    <a href="/" class="back">← Back to Lifer</a>
-
-  </main>
-
-  <footer class="footer">
-    © 2026 NTRA Pty Ltd
-  </footer>
-
+  </div>
 </div>
+</main>
 
+<footer class="site-footer" data-screen-label="Footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand" data-lockup="stacked">
+        <a class="brand brand-stacked" href="index.html" aria-label="Lifer home">
+          <img class="wordmark-stacked" src="img/wordmark-stacked-dark.svg" alt="Lifer — Capture · Collect · Compete" width="190">
+        </a>
+        <a class="brand brand-inline" href="index.html" aria-label="Lifer home">
+          <img class="mark" src="img/mark.png" alt="" width="38" height="38">
+          <span class="wordmark">Lifer</span>
+        </a>
+        <p>Built in Australia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Lifer</h4>
+        <ul>
+          <li><a href="index.html#how">How it works</a></li>
+          <li><a href="index.html#discover">Discover</a></li>
+          <li><a href="index.html#local">Your patch</a></li>
+          <li><a href="where-to-go.html">Where to go birding</a></li>
+          <li><a href="index.html#get">Get the app</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms of service</a></li>
+          <li><a href="delete-account.html">Delete your account</a></li>
+          <li><a href="mailto:chirp@liferbirding.com">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="aoc">
+      <h4>Acknowledgement of Country</h4>
+      <p>Lifer is built in Australia. Lifer acknowledges that we operate on the lands, waters and skies of many First Nations Peoples. We recognise the Traditional Owners of Country throughout Australia and their continuing connection to lands, waters and communities. We pay our respects to their Elders past and present.</p>
+    </div>
+    <div class="footer-bottom">
+      <span class="small">© 2026 Lifer. Made in Australia.</span>
+      <span class="small"><a href="ntra.html">NTRA Pty Ltd</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const header=document.getElementById('siteHeader');
+const onScroll=()=>header.classList.toggle('scrolled',window.scrollY>8);
+onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+</script>
 </body>
 </html>

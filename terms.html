@@ -1,271 +1,272 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terms of Service · Lifer</title>
-<meta name="description" content="Terms of Service for Lifer, a bird-watching app by NTRA Pty Ltd.">
-
-<!-- Open Graph -->
-<meta property="og:title" content="Terms of Service · Lifer">
-<meta property="og:description" content="The terms that govern your use of the Lifer app.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://liferbirding.com/terms">
-
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="apple-touch-icon" href="/icon.png">
-
-<!-- Fonts -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of service — Lifer</title>
+<meta name="description" content="The Terms of Service governing your use of the Lifer app, operated by NTRA Pty Ltd.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Nunito:wght@600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="lifer-site.css">
 <style>
-  /* Brand tokens — Lifer Brand Book v1.1 */
-  :root {
-    --deep-eucalyptus: #2D5F3E;
-    --golden-wattle: #E8A838;
-    --sandstone: #FAF5EE;
-    --charcoal: #2C2416;
-    --gum-grey: #6D6D78;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { height: 100%; }
-
-  body {
-    background-color: var(--sandstone);
-    color: var(--charcoal);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-weight: 400;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  .page {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding: 3rem 1.5rem 2rem;
-  }
-
-  @media (min-width: 768px) {
-    .page { padding: 5rem 2rem 3rem; }
-  }
-
-  .brand {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-
-  @media (min-width: 768px) {
-    .brand { margin-bottom: 4rem; }
-  }
-
-  .icon {
-    width: 72px;
-    height: 72px;
-    margin: 0 auto 0.75rem;
-    border-radius: 16px;
-    display: block;
-  }
-
-  .wordmark {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--charcoal);
-    letter-spacing: -0.01em;
-  }
-
-  .content {
-    max-width: 720px;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  h1 {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    font-size: clamp(1.875rem, 4vw, 2.5rem);
-    line-height: 1.2;
-    color: var(--charcoal);
-    letter-spacing: -0.015em;
-    margin-bottom: 0.5rem;
-  }
-
-  .updated {
-    font-size: 0.875rem;
-    color: var(--gum-grey);
-    margin-bottom: 2.5rem;
-  }
-
-  .intro {
-    font-size: 1.0625rem;
-    line-height: 1.65;
-    margin-bottom: 1.5rem;
-  }
-
-  h2 {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    font-size: 1.3125rem;
-    color: var(--charcoal);
-    letter-spacing: -0.01em;
-    margin: 2.75rem 0 1rem;
-  }
-
-  p {
-    font-size: 1rem;
-    line-height: 1.65;
-    margin-bottom: 1rem;
-  }
-
-  ul {
-    margin: 0 0 1rem 0;
-    padding-left: 1.5rem;
-  }
-
-  li {
-    font-size: 1rem;
-    line-height: 1.65;
-    margin-bottom: 0.5rem;
-  }
-
-  a {
-    color: var(--deep-eucalyptus);
-    text-decoration: none;
-    font-weight: 500;
-  }
-  a:hover { text-decoration: underline; }
-
-  strong { font-weight: 600; }
-
-  .footer {
-    margin-top: 4rem;
-    padding-top: 2rem;
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    font-size: 0.8125rem;
-    color: var(--gum-grey);
-    border-top: 1px solid rgba(0,0,0,0.08);
-    text-align: center;
-  }
-
-  @media (min-width: 768px) {
-    .footer { margin-top: 6rem; }
-  }
-
-  .footer a { color: var(--gum-grey); font-weight: 400; }
-  .footer a:hover { color: var(--deep-eucalyptus); }
+.legal-body .addr{font-style:normal;line-height:1.7;}
 </style>
 </head>
 <body>
 
-<div class="page">
+<header class="site-header" id="siteHeader" data-screen-label="Header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Lifer home">
+      <img class="mark" src="img/mark.png" alt="Lifer">
+      <span class="wordmark">Lifer</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#discover">Discover</a>
+      <a href="index.html#local">Your patch</a>
+      <a href="where-to-go.html">Directory</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-wattle" href="index.html#get">Get Lifer</a>
+      <button class="menu-toggle" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
 
-  <header class="brand">
-    <img src="/icon.png" alt="Lifer" class="icon">
-    <p class="wordmark">Lifer</p>
-  </header>
-
-  <main class="content">
-
+<main>
+<section class="legal-hero" data-screen-label="Terms hero">
+  <div class="wrap">
+    <span class="overline">Legal</span>
     <h1>Terms of Service</h1>
-    <p class="updated">Last updated: 28 May 2026</p>
+    <p class="lede">These Terms of Service ("Terms") govern your use of the Lifer mobile application ("App"), operated by <strong>NTRA Pty Ltd</strong> (ACN 697 386 351) ("we", "us", or "our"), an Australian company based in Newcastle, New South Wales. By downloading or using the App, you agree to be bound by these Terms. If you do not agree, do not use the App.</p>
+    <div class="legal-meta"><span>Last updated <b>21 July 2026</b></span></div>
+  </div>
+</section>
 
-    <p class="intro">These Terms of Service ("Terms") govern your use of the Lifer mobile application ("App"), operated by <strong>NTRA Pty Ltd</strong> (ACN 697 386 351) ("we", "us", or "our"), an Australian company based in Newcastle, New South Wales. By downloading or using the App, you agree to be bound by these Terms. If you do not agree, do not use the App.</p>
+<div class="wrap legal-layout">
+  <aside class="legal-toc" aria-label="On this page">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#s1">Acceptance of Terms</a></li>
+      <li><a href="#s2">Description of Service</a></li>
+      <li><a href="#s3">Subscriptions and purchases</a></li>
+      <li><a href="#s4">User Accounts</a></li>
+      <li><a href="#s5">Your Content</a></li>
+      <li><a href="#s6">Prohibited Activities</a></li>
+      <li><a href="#s7">Respect for wildlife</a></li>
+      <li><a href="#s8">AI Identification</a></li>
+      <li><a href="#s9">Leaderboards and Competition</a></li>
+      <li><a href="#s10">Intellectual Property</a></li>
+      <li><a href="#s11">Copyright Infringement</a></li>
+      <li><a href="#s12">Third-Party Services</a></li>
+      <li><a href="#s13">Disclaimer of Warranties</a></li>
+      <li><a href="#s14">Limitation of Liability</a></li>
+      <li><a href="#s15">Dispute Resolution</a></li>
+      <li><a href="#s16">Governing Law</a></li>
+      <li><a href="#s17">Account Termination and Deletion</a></li>
+      <li><a href="#s18">Changes to Terms</a></li>
+      <li><a href="#s19">Apple App Store — Additional Terms</a></li>
+      <li><a href="#s20">Contact Us</a></li>
+    </ol>
+  </aside>
 
-    <h2>1. Acceptance of Terms</h2>
-    <p>By creating an account or using Lifer, you confirm that you are at least 18 years of age and agree to these Terms and our <a href="/privacy">Privacy Policy</a>. The App is intended for adults and is not directed at children. If you are using the App on behalf of an organisation, you agree to these Terms on behalf of that organisation.</p>
+  <div class="legal-body" data-screen-label="Terms body">
+    <section id="s1">
+      <h2><span class="ix">01</span>Acceptance of Terms</h2>
+      <p>By creating an account or using Lifer, you confirm that you are at least 18 years of age and agree to these Terms and our Privacy Policy (<a href="privacy.html">liferbirding.com/privacy</a>). The App is intended for adults and is not directed at children. Children may use the App alongside and under the supervision of an adult account holder, but the account itself must be created, held, and managed by an adult. If you are using the App on behalf of an organisation, you agree to these Terms on behalf of that organisation.</p>
+    </section>
 
-    <h2>2. Description of Service</h2>
-    <p>Lifer is a gamified bird-watching app for iOS and Android. Users photograph birds, build personal collections, compete on leaderboards, and can connect with friends to see each other's captures. The App uses artificial intelligence to identify bird species from photographs submitted by users.</p>
+    <section id="s2">
+      <h2><span class="ix">02</span>Description of Service</h2>
+      <p>Lifer is a gamified bird-watching app for iOS and Android. Users photograph birds, build personal collections, compete on leaderboards, and can connect with friends to see each other's captures. The App uses artificial intelligence to identify bird species from photographs submitted by users.</p>
+    </section>
 
-    <h2>3. User Accounts</h2>
-    <p>You must create an account to use Lifer. You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. You must notify us immediately at <a href="mailto:support@liferbirding.com">support@liferbirding.com</a> if you suspect unauthorised use of your account.</p>
+    <section id="s3">
+      <h2><span class="ix">03</span>Subscriptions and purchases</h2>
+      <p>Lifer offers an optional paid subscription, <strong>Lifer Pro</strong>, which unlocks additional features described in the App.</p>
+      <ul>
+        <li><strong>Billing.</strong> Subscriptions are purchased through, and billed by, the Apple App Store or Google Play, under their payment terms. We never see or store your card details.</li>
+        <li><strong>Auto-renewal.</strong> Subscriptions renew automatically at the end of each billing period unless you cancel at least 24 hours before the period ends.</li>
+        <li><strong>Cancelling.</strong> You can cancel at any time in your App Store or Google Play subscription settings. Cancelling stops future renewals; you keep Pro access until the end of the period you've paid for. Deleting the App does not cancel a subscription.</li>
+        <li><strong>Refunds.</strong> Refunds are handled by Apple or Google under their respective refund policies. Nothing in this section limits any refund right you have under the Australian Consumer Law or other applicable consumer protection laws.</li>
+        <li><strong>Price changes.</strong> If we change subscription pricing, the change applies from your next renewal, and you'll be notified through the store's standard process before it takes effect.</li>
+      </ul>
+    </section>
 
-    <h2>4. Your Content</h2>
-    <p>By submitting photos or other content through the App ("User Content"), you grant us a non-exclusive, worldwide, royalty-free licence to use, store, reproduce, and display your User Content solely for the purpose of operating, providing, and improving the App. This includes displaying your captures on community maps and heatmaps and, where you use our social features, making them visible to friends you connect with.</p>
-    <p>This licence is limited to running the App. We do not sell your User Content, and we do not licence or exploit it for separate commercial purposes. You retain ownership of your User Content. You represent that you have the right to submit any content you upload and that it does not infringe any third party's rights.</p>
+    <section id="s4">
+      <h2><span class="ix">04</span>User Accounts</h2>
+      <p>You must create an account to use Lifer. You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. You must notify us immediately at <a href="mailto:support@liferbirding.com">support@liferbirding.com</a> if you suspect unauthorised use of your account.</p>
+    </section>
 
-    <h2>5. Prohibited Activities</h2>
-    <p>You agree not to:</p>
-    <ul>
-      <li>Submit false, fabricated, or stock photographs as genuine bird captures to gain an unfair advantage on leaderboards</li>
-      <li>Use automated tools, bots, or scripts to artificially inflate capture counts or leaderboard rankings</li>
-      <li>Attempt to reverse engineer, modify, or circumvent the bird identification system</li>
-      <li>Use the App for any unlawful purpose or in violation of any applicable laws or regulations</li>
-      <li>Harass, abuse, or harm other users</li>
-      <li>Attempt to gain unauthorised access to any part of the App or its related systems</li>
-      <li>Sell or transfer your account to another person</li>
-      <li>Use the App to advertise or offer to sell goods and services</li>
-    </ul>
+    <section id="s5">
+      <h2><span class="ix">05</span>Your Content</h2>
+      <p>By submitting photos or other content through the App ("User Content"), you grant us a non-exclusive, worldwide, royalty-free licence to use, store, reproduce, and display your User Content solely for the purpose of operating, providing, and improving the App. This includes displaying your captures on community maps and heatmaps and, where you use our social features, making them visible to friends you connect with.</p>
+      <p>This licence is limited to running the App. We do not sell your User Content, and we do not licence or exploit it for separate commercial purposes. You retain ownership of your User Content. You represent that you have the right to submit any content you upload and that it does not infringe any third party's rights.</p>
+    </section>
 
-    <h2>6. AI Identification</h2>
-    <p>Lifer uses artificial intelligence to identify bird species from photographs. AI identification results are <strong>suggestions only</strong>, provided for informational and entertainment purposes, and may not always be accurate. We make no warranty regarding the accuracy of species identifications. You should verify identifications independently if accuracy is important to you.</p>
+    <section id="s6">
+      <h2><span class="ix">06</span>Prohibited Activities</h2>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Submit false, fabricated, or stock photographs as genuine bird captures to gain an unfair advantage on leaderboards</li>
+        <li>Use automated tools, bots, or scripts to artificially inflate capture counts or leaderboard rankings</li>
+        <li>Attempt to reverse engineer, modify, or circumvent the bird identification system</li>
+        <li>Use the App for any unlawful purpose or in violation of any applicable laws or regulations</li>
+        <li>Harass, abuse, or harm other users</li>
+        <li>Attempt to gain unauthorised access to any part of the App or its related systems</li>
+        <li>Sell or transfer your account to another person</li>
+        <li>Use the App to advertise or offer to sell goods and services</li>
+      </ul>
+    </section>
 
-    <h2>7. Leaderboards and Competition</h2>
-    <p>Lifer features competitive leaderboards. We reserve the right to remove users from leaderboards, disqualify captures, or suspend accounts where we reasonably believe a user has violated these Terms, including through fraudulent captures or artificial manipulation of rankings.</p>
+    <section id="s7">
+      <h2><span class="ix">07</span>Respect for wildlife</h2>
+      <p>Lifer should make you a better, kinder birder — never a nuisance to wildlife. When you use the App, you agree to:</p>
+      <ul>
+        <li>Keep your distance. Never disturb, bait, or flush a bird for a capture.</li>
+        <li>Respect nesting birds and sensitive sites. A photo is never worth a disturbed nest.</li>
+        <li>Stay on legal ground. Don't trespass, and follow the rules of parks, reserves, and protected areas, and all applicable wildlife protection laws.</li>
+      </ul>
+      <p>We may remove content, disqualify captures, or suspend accounts associated with conduct that harms or harasses wildlife.</p>
+    </section>
 
-    <h2>8. Intellectual Property</h2>
-    <p>The App and its original content, features, and functionality are owned by NTRA Pty Ltd and are protected by applicable intellectual property laws. You may not copy, modify, distribute, or create derivative works based on the App without our express written permission.</p>
+    <section id="s8">
+      <h2><span class="ix">08</span>AI Identification</h2>
+      <p>Lifer uses artificial intelligence to identify bird species from photographs. AI identification results are <strong>suggestions only</strong>, provided for informational and entertainment purposes, and may not always be accurate. We make no warranty regarding the accuracy of species identifications. You should verify identifications independently if accuracy is important to you.</p>
+    </section>
 
-    <h2>9. Copyright Infringement</h2>
-    <p>If you believe any content on the App infringes your copyright, please notify us at <a href="mailto:support@liferbirding.com">support@liferbirding.com</a> with a description of the allegedly infringing content and your contact information. We will investigate and respond to valid notices in accordance with applicable law.</p>
+    <section id="s9">
+      <h2><span class="ix">09</span>Leaderboards and Competition</h2>
+      <p>Lifer features competitive leaderboards. We reserve the right to remove users from leaderboards, disqualify captures, or suspend accounts where we reasonably believe a user has violated these Terms, including through fraudulent captures or artificial manipulation of rankings.</p>
+    </section>
 
-    <h2>10. Third-Party Services</h2>
-    <p>The App integrates with third-party services, including Google (authentication and maps), third-party image-recognition providers used for species identification, error and performance monitoring services, and others. Your use of these services is subject to their respective terms and privacy policies. We are not responsible for the practices of any third-party services.</p>
+    <section id="s10">
+      <h2><span class="ix">10</span>Intellectual Property</h2>
+      <p>The App and its original content, features, and functionality are owned by NTRA Pty Ltd and are protected by applicable intellectual property laws. You may not copy, modify, distribute, or create derivative works based on the App without our express written permission.</p>
+    </section>
 
-    <h2>11. Disclaimer of Warranties</h2>
-    <p>The App is provided on an "as is" and "as available" basis without warranties of any kind, either express or implied. We do not warrant that the App will be uninterrupted, error-free, or free of viruses or other harmful components. Your use of the App is at your sole risk. Nothing in this section excludes, restricts, or modifies any consumer guarantee, right, or remedy under the Australian Consumer Law or any other applicable law that cannot lawfully be excluded.</p>
+    <section id="s11">
+      <h2><span class="ix">11</span>Copyright Infringement</h2>
+      <p>If you believe any content on the App infringes your copyright, please notify us at <a href="mailto:support@liferbirding.com">support@liferbirding.com</a> with a description of the allegedly infringing content and your contact information. We will investigate and respond to valid notices in accordance with applicable law.</p>
+    </section>
 
-    <h2>12. Limitation of Liability</h2>
-    <p>To the maximum extent permitted by applicable law, NTRA Pty Ltd shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or relating to your use of the App. Our total liability to you for any claim arising out of or relating to these Terms or the App shall not exceed the greater of (a) the amount you have paid us in the twelve months preceding the claim, or (b) AUD $100.</p>
-    <p>Nothing in these Terms excludes, restricts, or modifies any consumer guarantee, right, or remedy under the Australian Consumer Law that cannot lawfully be excluded. Where our liability for a breach of a non-excludable consumer guarantee cannot be excluded but can be limited, our liability is limited, at our option, to resupplying the relevant services or paying the cost of having them resupplied.</p>
+    <section id="s12">
+      <h2><span class="ix">12</span>Third-Party Services</h2>
+      <p>The App integrates with third-party services, including Google (authentication and maps), Apple and Google app store billing, RevenueCat (subscription management), third-party image-recognition providers used for species identification, error and performance monitoring services, and others. Your use of these services is subject to their respective terms and privacy policies. We are not responsible for the practices of any third-party services.</p>
+    </section>
 
-    <h2>13. Dispute Resolution</h2>
-    <p>If you have a dispute with us, please first contact us at <a href="mailto:support@liferbirding.com">support@liferbirding.com</a> and attempt to resolve it informally. We ask that you give us at least 30 days to resolve the matter before pursuing other action. Most concerns can be sorted out quickly this way.</p>
-    <p>Nothing in this section limits any right you have under the Australian Consumer Law to pursue a claim through a court or tribunal, or prevents either party from seeking urgent injunctive or equitable relief from a court.</p>
+    <section id="s13">
+      <h2><span class="ix">13</span>Disclaimer of Warranties</h2>
+      <p>The App is provided on an "as is" and "as available" basis without warranties of any kind, either express or implied. We do not warrant that the App will be uninterrupted, error-free, or free of viruses or other harmful components. Your use of the App is at your sole risk. Nothing in this section excludes, restricts, or modifies any consumer guarantee, right, or remedy under the Australian Consumer Law, or any non-excludable consumer protection law that applies in your country of residence.</p>
+    </section>
 
-    <h2>14. Governing Law</h2>
-    <p>These Terms are governed by the laws of New South Wales and the Commonwealth of Australia. Any dispute that is not resolved informally will be subject to the exclusive jurisdiction of the courts of New South Wales, Australia.</p>
+    <section id="s14">
+      <h2><span class="ix">14</span>Limitation of Liability</h2>
+      <p>To the maximum extent permitted by applicable law, NTRA Pty Ltd shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or relating to your use of the App. Our total liability to you for any claim arising out of or relating to these Terms or the App shall not exceed the greater of (a) the amount you have paid us in the twelve months preceding the claim, or (b) AUD $100.</p>
+      <p>Nothing in these Terms excludes, restricts, or modifies any consumer guarantee, right, or remedy under the Australian Consumer Law, or any other applicable consumer protection law that cannot lawfully be excluded. Where our liability for a breach of a non-excludable consumer guarantee cannot be excluded but can be limited, our liability is limited, at our option, to resupplying the relevant services or paying the cost of having them resupplied.</p>
+    </section>
 
-    <h2>15. Account Termination and Deletion</h2>
-    <p>We reserve the right to suspend or terminate your account for violation of these Terms. You may delete your account at any time through the App (Settings → Account → Delete Account) or by contacting us at <a href="mailto:support@liferbirding.com">support@liferbirding.com</a>. Details of what data is deleted and retained are available on our <a href="/delete-account">account deletion page</a>. Upon termination, your right to use the App will immediately cease.</p>
+    <section id="s15">
+      <h2><span class="ix">15</span>Dispute Resolution</h2>
+      <p>If you have a dispute with us, please first contact us at <a href="mailto:support@liferbirding.com">support@liferbirding.com</a> and attempt to resolve it informally. We ask that you give us at least 30 days to resolve the matter before pursuing other action. Most concerns can be sorted out quickly this way.</p>
+      <p>Nothing in this section limits any right you have under the Australian Consumer Law, or the consumer protection laws of your country of residence, to pursue a claim through a court or tribunal, or prevents either party from seeking urgent injunctive or equitable relief from a court.</p>
+    </section>
 
-    <h2>16. Changes to Terms</h2>
-    <p>We may update these Terms from time to time. We will notify you of significant changes by email or through the App. Your continued use of the App after changes take effect constitutes your acceptance of the updated Terms. We encourage you to review these Terms periodically.</p>
+    <section id="s16">
+      <h2><span class="ix">16</span>Governing Law</h2>
+      <p>These Terms are governed by the laws of New South Wales and the Commonwealth of Australia. Any dispute that is not resolved informally will be subject to the exclusive jurisdiction of the courts of New South Wales, Australia. This does not deprive you of the protection of any mandatory consumer protection laws of your country of residence.</p>
+    </section>
 
-    <h2>17. Apple App Store — Additional Terms</h2>
-    <p>These additional terms apply if you download the App from the Apple App Store:</p>
-    <ul>
-      <li>These Terms are between you and NTRA Pty Ltd only, not with Apple Inc. ("Apple"). Apple is not responsible for the App or its content.</li>
-      <li>Apple has no obligation to provide any maintenance or support services for the App.</li>
-      <li>In the event the App fails to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price (if any) for the App. To the maximum extent permitted by applicable law, Apple has no other warranty obligation with respect to the App.</li>
-      <li>Apple is not responsible for addressing any claims by you or any third party relating to the App, including product liability claims, claims that the App fails to conform to any legal or regulatory requirement, and claims arising under consumer protection or similar legislation.</li>
-      <li>Apple is not responsible for the investigation, defence, settlement, or discharge of any third-party claim that the App infringes that third party's intellectual property rights.</li>
-      <li>You represent that you are not located in a country subject to a U.S. Government embargo or designated as a "terrorist supporting" country, and that you are not listed on any U.S. Government list of prohibited or restricted parties.</li>
-      <li>Apple and Apple's subsidiaries are third-party beneficiaries of these Terms, and upon your acceptance, Apple will have the right (and will be deemed to have accepted the right) to enforce these Terms against you as a third-party beneficiary.</li>
-    </ul>
+    <section id="s17">
+      <h2><span class="ix">17</span>Account Termination and Deletion</h2>
+      <p>We reserve the right to suspend or terminate your account for violation of these Terms. You may delete your account at any time through the App (Settings → Account → Delete Account) or by contacting us at <a href="mailto:support@liferbirding.com">support@liferbirding.com</a>. Details of what data is deleted and retained are available on our account deletion page (<a href="delete-account.html">liferbirding.com/delete-account</a>). Upon termination, your right to use the App will immediately cease.</p>
+    </section>
 
-    <h2>18. Contact Us</h2>
-    <p>If you have any questions about these Terms, please contact us at:</p>
-    <p>NTRA Pty Ltd<br>
-    Newcastle, New South Wales, Australia<br>
-    <a href="mailto:support@liferbirding.com">support@liferbirding.com</a></p>
+    <section id="s18">
+      <h2><span class="ix">18</span>Changes to Terms</h2>
+      <p>We may update these Terms from time to time. We will notify you of significant changes by email or through the App. Your continued use of the App after changes take effect constitutes your acceptance of the updated Terms. We encourage you to review these Terms periodically.</p>
+    </section>
 
-  </main>
+    <section id="s19">
+      <h2><span class="ix">19</span>Apple App Store — Additional Terms</h2>
+      <p>These additional terms apply if you download the App from the Apple App Store:</p>
+      <ul>
+        <li>These Terms are between you and NTRA Pty Ltd only, not with Apple Inc. ("Apple"). Apple is not responsible for the App or its content.</li>
+        <li>Apple has no obligation to provide any maintenance or support services for the App.</li>
+        <li>In the event the App fails to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price (if any) for the App. To the maximum extent permitted by applicable law, Apple has no other warranty obligation with respect to the App.</li>
+        <li>Apple is not responsible for addressing any claims by you or any third party relating to the App, including product liability claims, claims that the App fails to conform to any legal or regulatory requirement, and claims arising under consumer protection or similar legislation.</li>
+        <li>Apple is not responsible for the investigation, defence, settlement, or discharge of any third-party claim that the App infringes that third party's intellectual property rights.</li>
+        <li>You represent that you are not located in a country subject to a U.S. Government embargo or designated as a "terrorist supporting" country, and that you are not listed on any U.S. Government list of prohibited or restricted parties.</li>
+        <li>Apple and Apple's subsidiaries are third-party beneficiaries of these Terms, and upon your acceptance, Apple will have the right (and will be deemed to have accepted the right) to enforce these Terms against you as a third-party beneficiary.</li>
+      </ul>
+    </section>
 
-  <footer class="footer">
-    © 2026 Lifer — a project by <a href="/ntra">NTRA Pty Ltd</a> · <a href="/">Home</a> · <a href="/privacy">Privacy</a> · <a href="/delete-account">Delete account</a>
-  </footer>
-
+    <section id="s20">
+      <h2><span class="ix">20</span>Contact Us</h2>
+      <p>If you have any questions about these Terms, please contact us at:</p>
+      <p class="addr">NTRA Pty Ltd<br>Newcastle, New South Wales, Australia<br><a href="mailto:support@liferbirding.com">support@liferbirding.com</a></p>
+    </section>
+  </div>
 </div>
+</main>
 
+<footer class="site-footer" data-screen-label="Footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand" data-lockup="stacked">
+        <a class="brand brand-stacked" href="index.html" aria-label="Lifer home">
+          <img class="wordmark-stacked" src="img/wordmark-stacked-dark.svg" alt="Lifer — Capture · Collect · Compete" width="190">
+        </a>
+        <a class="brand brand-inline" href="index.html" aria-label="Lifer home">
+          <img class="mark" src="img/mark.png" alt="" width="38" height="38">
+          <span class="wordmark">Lifer</span>
+        </a>
+        <p>Built in Australia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Lifer</h4>
+        <ul>
+          <li><a href="index.html#how">How it works</a></li>
+          <li><a href="index.html#discover">Discover</a></li>
+          <li><a href="index.html#local">Your patch</a></li>
+          <li><a href="where-to-go.html">Where to go birding</a></li>
+          <li><a href="index.html#get">Get the app</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms of service</a></li>
+          <li><a href="delete-account.html">Delete your account</a></li>
+          <li><a href="mailto:chirp@liferbirding.com">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="aoc">
+      <h4>Acknowledgement of Country</h4>
+      <p>Lifer is built in Australia. Lifer acknowledges that we operate on the lands, waters and skies of many First Nations Peoples. We recognise the Traditional Owners of Country throughout Australia and their continuing connection to lands, waters and communities. We pay our respects to their Elders past and present.</p>
+    </div>
+    <div class="footer-bottom">
+      <span class="small">© 2026 Lifer. Made in Australia.</span>
+      <span class="small"><a href="ntra.html">NTRA Pty Ltd</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const header=document.getElementById('siteHeader');
+const onScroll=()=>header.classList.toggle('scrolled',window.scrollY>8);
+onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+const links=[...document.querySelectorAll('.legal-toc a')];
+const map=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
+const obs=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));map.get(e.target.id)?.classList.add('active');}});
+},{rootMargin:'-20% 0px -70% 0px'});
+document.querySelectorAll('.legal-body section').forEach(s=>obs.observe(s));
+</script>
 </body>
 </html>

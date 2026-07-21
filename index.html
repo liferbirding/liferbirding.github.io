@@ -1,233 +1,542 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lifer</title>
-<meta name="description" content="Lifer is a bird-watching app for iOS and Android, designed for Australia. In development for launch in 2026.">
-
-<!-- Open Graph -->
-<meta property="og:title" content="Lifer">
-<meta property="og:description" content="A bird-watching app for Australia. In development.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://liferbirding.com">
-
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="apple-touch-icon" href="/icon.png">
-
-<!-- Fonts -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lifer — the birding game</title>
+<meta name="description" content="Lifer is the birding game. Capture, collect and compete — spot a bird, build your aviary, and climb the leaderboard.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Nunito:wght@600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="lifer-site.css">
 <style>
-  /* Brand tokens — Lifer Brand Book v1.1 */
-  :root {
-    --deep-eucalyptus: #2D5F3E;
-    --golden-wattle: #E8A838;
-    --sandstone: #FAF5EE;
-    --charcoal: #2C2416;
-    --gum-grey: #6D6D78;
-  }
+/* ============ HOMEPAGE-SPECIFIC ============ */
 
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+/* ---------- HERO ---------- */
+.hero{position:relative;padding-top:clamp(40px,7vh,84px);padding-bottom:clamp(48px,8vh,96px);overflow:hidden;}
+.hero-grid{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,72px);align-items:center;
+}
+.hero-copy{max-width:720px;}
+.hero h1{
+  font-size:calc(clamp(46px,8.6vw,128px) * var(--hero-scale, 1));
+  margin:22px 0 0;
+}
+.hero h1 .gold{color:var(--wattle-dk);}
+.hero-sub{
+  font-size:clamp(17px,1.6vw,21px);color:var(--ink-2);max-width:33ch;
+  margin:26px 0 0;line-height:1.5;
+}
+.hero-tagline{
+  display:flex;gap:14px;align-items:center;margin-top:18px;
+  font-family:var(--display);font-weight:800;font-size:clamp(14px,1.4vw,17px);
+  letter-spacing:.02em;color:var(--ink);
+}
+.hero-tagline span{color:var(--wattle-dk);}
+.hero-tagline i{font-style:normal;color:var(--faint);font-weight:700;}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:34px;}
+.hero-note{margin-top:18px;font-size:13px;color:var(--gum);}
 
-  html, body {
-    height: 100%;
-  }
+/* floating phone */
+.hero-phone-col{position:relative;display:flex;justify-content:center;}
+.hero-phone{max-width:330px;position:relative;z-index:2;will-change:transform;}
+.hero-blob{
+  position:absolute;width:118%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 50% 40%, var(--wattle-lt), transparent 62%);
+  top:-8%;left:-9%;z-index:0;
+}
+.hero-disc{
+  position:absolute;border-radius:50%;z-index:1;
+}
+.hero-disc.d1{width:86px;height:86px;background:var(--euca);top:6%;left:-4%;}
+.hero-disc.d2{width:54px;height:54px;background:var(--wattle);bottom:14%;right:-2%;box-shadow:var(--shadow-fab);}
+.hero-chip{
+  position:absolute;z-index:3;background:var(--card);border:1px solid var(--line);
+  border-radius:14px;padding:11px 15px;box-shadow:var(--shadow-lift);
+  display:flex;align-items:center;gap:11px;
+}
+.hero-chip .hc-dot{width:34px;height:34px;border-radius:9px;background:var(--ink);display:grid;place-items:center;flex:none;}
+.hero-chip .hc-dot b{font-family:var(--display);font-weight:900;color:var(--wattle);font-size:15px;}
+.hero-chip .hc-t{line-height:1.15;}
+.hero-chip .hc-t small{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gum);font-weight:600;}
+.hero-chip .hc-t strong{font-family:var(--display);font-weight:800;font-size:14px;}
+.hero-chip.c1{top:8%;right:-6%;}
+.hero-chip.c2{bottom:9%;left:-10%;}
 
-  body {
-    background-color: var(--sandstone);
-    color: var(--charcoal);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-weight: 400;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+/* scroll cue */
+.scroll-cue{display:flex;align-items:center;gap:10px;margin-top:46px;color:var(--gum);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;}
+.scroll-cue .line{width:42px;height:1px;background:var(--line-2);position:relative;overflow:hidden;}
+.scroll-cue .line::after{content:"";position:absolute;inset:0;width:14px;background:var(--ink);animation:cue 2.4s var(--ease) infinite;}
+@keyframes cue{0%{transform:translateX(-14px);}60%,100%{transform:translateX(42px);}}
+@media (prefers-reduced-motion:reduce){.scroll-cue .line::after{animation:none;}}
 
-  .page {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding: 3rem 1.5rem 2rem;
-  }
+/* ---------- SIGNATURE STAT BAND ---------- */
+.signature{background:var(--ink);color:#fff;position:relative;overflow:hidden;}
+.signature::before{
+  content:"";position:absolute;inset:0;
+  background:url('img/grain.png');background-size:200px;opacity:.5;mix-blend-mode:overlay;pointer-events:none;
+}
+.signature .wrap{position:relative;z-index:1;}
+.sig-head{display:grid;grid-template-columns:1.3fr .9fr;gap:36px;align-items:end;margin-bottom:clamp(34px,5vw,56px);}
+.sig-head h2{color:#fff;font-size:clamp(34px,5.2vw,76px);letter-spacing:-.03em;}
+.sig-head h2 em{font-style:normal;color:var(--wattle);}
+.sig-head .overline{color:var(--wattle);}
+.sig-head p{color:var(--night-text-2);font-size:clamp(15px,1.4vw,18px);max-width:40ch;}
+.sig-band{
+  display:grid;grid-auto-flow:column;grid-auto-columns:1fr;
+  border:1px solid rgba(255,255,255,.16);border-radius:20px;overflow:hidden;
+  background:rgba(255,255,255,.02);
+}
+.sig-cell{
+  padding:clamp(26px,3.6vw,46px) clamp(16px,2.4vw,34px);text-align:center;
+  border-left:1px solid var(--stat-line);position:relative;
+}
+.sig-cell:first-child{border-left:0;}
+.sig-cell .n{font-family:var(--display);font-weight:800;font-size:clamp(40px,7vw,84px);line-height:.9;letter-spacing:-.04em;font-feature-settings:"tnum" 1;}
+.sig-cell .n.accent{color:var(--wattle);}
+.sig-cell .l{margin-top:14px;font-size:clamp(10px,1vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--stat-muted);font-weight:600;}
+.sig-caption{margin-top:22px;font-size:13px;color:var(--night-text-muted);display:flex;align-items:center;gap:8px;}
+.sig-caption .pin{width:7px;height:7px;border-radius:50%;background:var(--euca);box-shadow:0 0 0 4px rgba(45,95,62,.25);}
 
-  @media (min-width: 768px) {
-    .page {
-      padding: 5rem 2rem 3rem;
-    }
-  }
+/* ---------- CAPTURE · COLLECT · COMPETE ---------- */
+.ccc{position:relative;}
+.ccc-intro{max-width:640px;margin-bottom:clamp(40px,6vw,72px);}
+.ccc-intro h2{font-size:clamp(32px,4.6vw,60px);}
+.ccc-intro p{margin-top:18px;font-size:clamp(16px,1.5vw,19px);color:var(--ink-2);}
+.ccc-grid{display:grid;grid-template-columns:1fr 360px;gap:clamp(40px,7vw,120px);align-items:start;}
+.ccc-steps{display:flex;flex-direction:column;}
+.ccc-step{min-height:78vh;display:flex;flex-direction:column;justify-content:center;padding-block:30px;}
+.ccc-step .num{font-family:var(--mono);font-size:13px;color:var(--wattle-dk);letter-spacing:.08em;}
+.ccc-step .word{font-family:var(--display);font-weight:900;font-size:clamp(38px,5.5vw,80px);letter-spacing:-.03em;margin:10px 0 0;line-height:.95;}
+.ccc-step h3{font-size:clamp(20px,2vw,26px);margin-top:22px;color:var(--ink);}
+.ccc-step p{margin-top:14px;font-size:clamp(15px,1.4vw,18px);color:var(--ink-2);max-width:42ch;}
+.ccc-step .feat{margin-top:22px;display:flex;flex-direction:column;gap:11px;}
+.ccc-step .feat li{list-style:none;display:flex;gap:11px;align-items:flex-start;font-size:15px;color:var(--ink-2);}
+.ccc-step .feat .tick{flex:none;width:20px;height:20px;border-radius:50%;background:var(--euca-lt);display:grid;place-items:center;margin-top:1px;}
+.ccc-step .feat .tick svg{width:12px;height:12px;stroke:var(--euca);}
+.ccc-step .inline-phone{display:none;margin-top:30px;}
 
-  /* Top brand block — mark + wordmark */
-  .brand {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
+.ccc-phone-col{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;}
+.ccc-phone-stack{position:relative;width:300px;height:569px;}
+.ccc-phone-stack .phone{position:absolute;inset:0;max-width:none;opacity:0;transform:scale(.97);transition:opacity .55s var(--ease),transform .55s var(--ease);}
+.ccc-phone-stack .phone.active{opacity:1;transform:none;}
+.ccc-phone-stack .phone img{width:100%;height:auto;}
 
-  @media (min-width: 768px) {
-    .brand {
-      margin-bottom: 6rem;
-    }
-  }
+/* ---------- WHY DIFFERENT ---------- */
+.why{background:var(--sand-2);border-block:1px solid var(--line);}
+.why-head{max-width:680px;margin-bottom:clamp(40px,6vw,64px);}
+.why-head h2{font-size:clamp(32px,4.6vw,60px);}
+.why-head p{margin-top:16px;color:var(--ink-2);font-size:clamp(16px,1.5vw,19px);}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2vw,28px);}
+.why-card{
+  background:var(--card);border:1px solid var(--line);border-radius:18px;
+  padding:clamp(24px,2.6vw,36px);box-shadow:var(--shadow);position:relative;
+  display:flex;flex-direction:column;
+}
+.why-card .ico{width:46px;height:46px;border-radius:12px;background:var(--ink);display:grid;place-items:center;margin-bottom:22px;}
+.why-card .ico svg{width:23px;height:23px;stroke:var(--wattle);}
+.why-card h3{font-size:21px;}
+.why-card p{margin-top:13px;color:var(--ink-2);font-size:15px;line-height:1.6;}
+.why-card .euca-rule{position:absolute;left:0;top:clamp(24px,2.6vw,36px);bottom:clamp(24px,2.6vw,36px);width:3px;border-radius:3px;background:var(--euca);opacity:0;}
+.why-card.has-rule{padding-left:calc(clamp(24px,2.6vw,36px) + 14px);}
+.why-card.has-rule .euca-rule{opacity:1;}
 
-  .icon {
-    width: 88px;
-    height: 88px;
-    margin: 0 auto 0.75rem;
-    border-radius: 18px;
-    display: block;
-  }
+.covenant{
+  margin-top:clamp(24px,3vw,36px);background:var(--ink);color:#fff;border-radius:18px;
+  padding:clamp(28px,3.4vw,44px) clamp(28px,3.6vw,52px);
+  display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;
+}
+.covenant p{font-family:var(--display);font-weight:800;font-size:clamp(20px,2.4vw,32px);letter-spacing:-.02em;max-width:20ch;line-height:1.12;}
+.covenant p .gold{color:var(--wattle);}
+.covenant .cov-side{color:var(--night-text-2);font-size:14px;max-width:30ch;line-height:1.6;}
 
-  @media (min-width: 768px) {
-    .icon {
-      width: 104px;
-      height: 104px;
-      border-radius: 20px;
-    }
-  }
+/* ---------- DISCOVER ---------- */
+.discover{background:var(--sand-2);border-block:1px solid var(--line);}
+.discover-grid{display:grid;grid-template-columns:330px 1fr;gap:clamp(40px,7vw,100px);align-items:center;}
+.discover-phone{display:flex;justify-content:center;}
+.discover-phone .phone{max-width:300px;}
+.discover-copy .overline{color:var(--wattle-dk);}
+.discover-copy h2{font-size:clamp(32px,4.6vw,60px);}
+.discover-copy p{margin-top:18px;color:var(--ink-2);font-size:clamp(16px,1.5vw,19px);line-height:1.6;max-width:46ch;}
+.discover-tags{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px;}
+.discover-tags .chip{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line-2);color:var(--ink-2);border-radius:999px;padding:9px 16px;font-size:14px;font-weight:500;}
+.discover-tags .chip .d{width:8px;height:8px;border-radius:50%;background:var(--euca);flex:none;}
+@media(max-width:960px){.discover-grid{grid-template-columns:1fr;}.discover-phone{order:-1;}}
 
-  .wordmark {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    font-size: 1.625rem;
-    color: var(--charcoal);
-    letter-spacing: -0.01em;
-  }
+/* ---------- MAP / LOCAL ---------- */
+.local{background:var(--ink);color:#fff;position:relative;overflow:hidden;}
+.local::before{content:"";position:absolute;inset:0;background:url('img/grain.png');background-size:200px;opacity:.45;mix-blend-mode:overlay;pointer-events:none;}
+.local .wrap{position:relative;z-index:1;}
+.local-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(36px,5vw,80px);align-items:center;}
+.local-copy h2{color:#fff;font-size:clamp(32px,4.8vw,68px);}
+.local-copy h2 em{font-style:normal;color:var(--wattle);}
+.local-copy .overline{color:var(--wattle);}
+.local-copy p{margin-top:20px;color:var(--night-text-2);font-size:clamp(16px,1.5vw,19px);max-width:38ch;line-height:1.6;}
+.local-species{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px;}
+.local-species .sp{
+  display:inline-flex;align-items:center;gap:9px;background:var(--night-2);
+  border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:8px 15px 8px 11px;font-size:14px;
+}
+.local-species .sp .d{width:9px;height:9px;border-radius:50%;flex:none;}
+.local-map{position:relative;}
+.local-map .phone{max-width:330px;margin:0 auto;}
+.local-pin{
+  position:absolute;background:var(--card);color:var(--ink);border-radius:12px;
+  padding:8px 13px;box-shadow:var(--shadow-lift);font-size:13px;font-weight:600;z-index:3;
+  display:flex;align-items:center;gap:8px;white-space:nowrap;
+}
+.local-pin .d{width:9px;height:9px;border-radius:50%;flex:none;}
+.local-pin .sci{font-size:11px;}
+.local-pin.p1{top:14%;left:-4%;}
+.local-pin.p2{bottom:20%;right:-6%;}
 
-  /* Tagline / evocative line */
-  .tagline {
-    max-width: 640px;
-    margin: 0 auto 5rem;
-    text-align: center;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 600;
-    font-size: clamp(1.5rem, 4vw, 2.125rem);
-    line-height: 1.25;
-    color: var(--charcoal);
-    letter-spacing: -0.015em;
-  }
+/* ---------- FINAL CTA ---------- */
+.final{text-align:center;}
+.final .mark-tile{width:72px;height:72px;border-radius:18px;margin:0 auto 28px;display:block;box-shadow:var(--shadow-lift);}
+.final h2{font-size:clamp(40px,7vw,104px);letter-spacing:-.03em;max-width:16ch;margin:0 auto;}
+.final h2 .gold{color:var(--wattle-dk);}
+.final p{margin:24px auto 0;max-width:42ch;color:var(--ink-2);font-size:clamp(16px,1.5vw,19px);}
+.final .store-row{justify-content:center;margin-top:36px;}
+.final-tagline{margin-top:30px;font-family:var(--display);font-weight:800;letter-spacing:.04em;color:var(--ink);font-size:15px;}
+.final-tagline span{color:var(--wattle-dk);}
 
-  @media (min-width: 768px) {
-    .tagline {
-      margin-bottom: 7rem;
-    }
-  }
+/* ---------- FOOTER ---------- */
+.site-footer{padding-block:clamp(56px,7vw,84px) 40px;position:relative;overflow:hidden;}
+.site-footer::before{content:"";position:absolute;inset:0;background:url('img/grain.png');background-size:200px;opacity:.4;mix-blend-mode:overlay;pointer-events:none;}
+.site-footer .wrap{position:relative;z-index:1;}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.12);}
+.footer-brand .brand .wordmark{color:#fff;}
+.footer-brand p{margin-top:18px;color:var(--night-text-2);font-size:14px;max-width:34ch;line-height:1.65;}
+.footer-col h4{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--night-text-muted);margin:0 0 16px;}
+.footer-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;}
+.footer-col a{font-size:15px;}
+.aoc{padding:36px 0;border-bottom:1px solid rgba(255,255,255,.12);}
+.aoc h4{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--wattle);margin:0 0 12px;}
+.aoc p{color:var(--night-text-2);font-size:14px;max-width:72ch;line-height:1.7;}
+.footer-bottom{padding-top:28px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+.footer-bottom .small{font-size:13px;color:var(--night-text-muted);}
+.footer-bottom .small a{text-decoration:underline;text-underline-offset:2px;}
 
-  /* Factual block */
-  .content {
-    max-width: 640px;
-    margin: 0 auto;
-  }
+/* footer brand lockup (tweakable) */
+.footer-brand .brand-inline{display:none;}
+.footer-brand[data-lockup="inline"] .brand-stacked{display:none;}
+.footer-brand[data-lockup="inline"] .brand-inline{display:flex;}
+.wordmark-stacked{width:243px;max-width:100%;height:auto;display:block;}
+.footer-brand[data-lockup="stacked"] p{max-width:243px;text-align:center;}
 
-  .block h2 {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 600;
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--deep-eucalyptus);
-    margin-bottom: 0.875rem;
-  }
-
-  .block p {
-    font-size: 1rem;
-    line-height: 1.65;
-    color: var(--charcoal);
-  }
-
-  @media (min-width: 768px) {
-    .block p {
-      font-size: 1.0625rem;
-    }
-  }
-
-  /* Footer */
-  .footer {
-    margin-top: 6rem;
-    padding-top: 2rem;
-    max-width: 640px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    font-size: 0.8125rem;
-    color: var(--gum-grey);
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
-  }
-
-  @media (min-width: 768px) {
-    .footer {
-      margin-top: 8rem;
-    }
-  }
-
-  .footer-row {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-    text-align: center;
-  }
-
-  @media (min-width: 600px) {
-    .footer-row {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-  }
-
-  .footer-links {
-    display: flex;
-    gap: 1.25rem;
-  }
-
-  .footer a {
-    color: var(--gum-grey);
-    text-decoration: none;
-    transition: color 0.15s ease;
-  }
-
-  .footer a:hover {
-    color: var(--deep-eucalyptus);
-  }
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:48px;}
+  .hero-phone-col{order:-1;}
+  .sig-head{grid-template-columns:1fr;gap:18px;}
+  .why-grid{grid-template-columns:1fr;}
+  .local-grid{grid-template-columns:1fr;gap:48px;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+  .footer-brand{grid-column:1/-1;}
+}
+@media (max-width:860px){
+  .ccc-grid{grid-template-columns:1fr;}
+  .ccc-phone-col{display:none;}
+  .ccc-step{min-height:auto;padding-block:48px;border-top:1px solid var(--line);}
+  .ccc-step:first-child{border-top:0;}
+  .ccc-step .inline-phone{display:flex;justify-content:center;}
+  .ccc-step .inline-phone .phone{max-width:280px;}
+}
+@media (max-width:600px){
+  .sig-band{grid-auto-flow:row;grid-auto-columns:auto;}
+  .sig-cell{border-left:0;border-top:1px solid var(--stat-line);}
+  .sig-cell:first-child{border-top:0;}
+  .stat-band{grid-auto-flow:row;}
+  .stat-cell{border-left:0;border-top:1px solid var(--stat-line);}
+  .stat-cell:first-child{border-top:0;}
+  .covenant{flex-direction:column;align-items:flex-start;}
+  .hero-chip{display:none;}
+  .footer-top{grid-template-columns:1fr;}
+  .local-pin{display:none;}
+}
 </style>
 </head>
 <body>
 
-<div class="page">
+<!-- ===================== HEADER ===================== -->
+<header class="site-header" id="siteHeader" data-screen-label="Header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Lifer home">
+      <img class="mark" src="img/mark.png" alt="Lifer">
+      <span class="wordmark">Lifer</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#how">How it works</a>
+      <a href="#discover">Discover</a>
+      <a href="#local">Your patch</a>
+      <a href="where-to-go.html">Directory</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-wattle" href="#get">Get Lifer</a>
+      <button class="menu-toggle" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
 
-  <header class="brand">
-    <img src="/icon.png" alt="Lifer" class="icon">
-    <p class="wordmark">Lifer</p>
-  </header>
+<main>
+<!-- ===================== HERO ===================== -->
+<section class="hero" data-screen-label="Hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="overline reveal">Your life list · in your pocket</span>
+      <h1 class="reveal">Your local park is <span class="gold">louder</span> than you realised.</h1>
+      <p class="hero-sub reveal">Lifer is the birding game. Point your phone, log what you find, and watch your life list grow.</p>
+      <div class="hero-tagline reveal"><span>Capture</span><i>·</i><span>Collect</span><i>·</i><span>Compete</span></div>
+      <div class="hero-actions reveal">
+        <a class="btn btn-wattle" href="#get">Get Lifer — it's free</a>
+      </div>
+      <div class="store-row reveal" style="margin-top:18px">
+        <!-- launch-day: https://apps.apple.com/app/id6762440686 --><a class="store-badge" href="coming-soon.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 1H7a3 3 0 0 0-3 3v16a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3Zm-5 21a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6Zm6-4H6V4h12v14Z"/></svg><span class="sb-text"><span class="sb-top">Download on the</span><span class="sb-main">App Store</span></span></a>
+        <!-- launch-day: https://play.google.com/store/apps/details?id=com.liferbirding.app --><a class="store-badge" href="coming-soon.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 3.2v17.6c0 .5.5.8.9.5l9.4-5.3-3-3L4 3.2Zm12 5.6L6.7 3.5l8 4.5 1.3.8Zm3 2-2.5-1.4-2.9 2.6 2.9 2.6L19 15c.9-.5.9-1.8 0-2.3l0-1.9ZM6.7 20.5 16 15.2l-1.3.8-8 4.5Z"/></svg><span class="sb-text"><span class="sb-top">Get it on</span><span class="sb-main">Google Play</span></span></a>
+      </div>
+      <div class="scroll-cue reveal"><span class="line"></span>Scroll</div>
+    </div>
 
-  <p class="tagline">Better than your grandad's birdwatching.</p>
-
-  <main class="content">
-    <section class="block">
-      <h2>About Lifer</h2>
-      <p>Lifer is a bird-watching app for iOS and Android, designed to help people in Australia identify, collect, and learn about the birds around them. In development for launch in 2026.</p>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-row">
-      <span>© 2026 Lifer — a project by <a href="/ntra">NTRA Pty Ltd</a></span>
-      <div class="footer-links">
-        <a href="/privacy">Privacy</a>
-        <a href="/terms">Terms</a>
-        <a href="mailto:support@liferbirding.com">Contact</a>
+    <div class="hero-phone-col">
+      <div class="hero-blob"></div>
+      <span class="hero-disc d1"></span>
+      <span class="hero-disc d2"></span>
+      <div class="phone hero-phone" id="heroPhone"><img src="img/01-aviary.png" alt="The Lifer aviary — a grid of captured bird cards with a dark stat band showing 35 captures, 16 lifers, 6 bird types" width="945" height="1832" fetchpriority="high"></div>
+      <div class="hero-chip c1">
+        <span class="hc-dot"><b>24</b></span>
+        <span class="hc-t"><small>Lifers</small><strong>In your aviary</strong></span>
+      </div>
+      <div class="hero-chip c2">
+        <span class="hc-dot"><b>★</b></span>
+        <span class="hc-t"><small>Just spotted</small><strong>Powerful Owl</strong></span>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-</div>
+<!-- ===================== SIGNATURE — STAT BAND ===================== -->
+<section class="signature section" id="board" data-screen-label="Signature stat band">
+  <div class="wrap">
+    <div class="sig-head reveal">
+      <div>
+        <span class="overline">Where every capture counts</span>
+        <h2>Every bird you find, <em>on the board.</em></h2>
+      </div>
+      <p>Lifer keeps the count. Every capture, every first-ever sighting, every bird type — totalled in the one place you'll keep coming back to.</p>
+    </div>
+
+    <div class="sig-band reveal">
+      <div class="sig-cell"><div class="n">47</div><div class="l">Captures</div></div>
+      <div class="sig-cell"><div class="n accent">24</div><div class="l">Lifers</div></div>
+      <div class="sig-cell"><div class="n">9</div><div class="l">Bird types</div></div>
+      <div class="sig-cell"><div class="n accent">4,700</div><div class="l">XP</div></div>
+    </div>
+    <div class="sig-caption reveal">Three taps from curious to hooked. No field guide to memorise. Just spot birds, build your Aviary, and discover species as you play.</div>
+  </div>
+</section>
+
+<!-- ===================== CAPTURE · COLLECT · COMPETE ===================== -->
+<section class="ccc section" id="how" data-screen-label="How it works">
+  <div class="wrap">
+    <div class="ccc-intro reveal">
+      <span class="overline">How it works</span>
+      <h2>Three taps from curious to hooked.</h2>
+      <p>No field guide to memorise. No quiz to pass. You watch, you log, you climb — and you learn the birds without ever feeling like you're studying.</p>
+    </div>
+
+    <div class="ccc-grid">
+      <div class="ccc-steps">
+        <div class="ccc-step" data-step="0">
+          <div class="num">01</div>
+          <div class="word">Capture</div>
+          <h3>Spot it. Get close. Take the shot.</h3>
+          <p>Line up your camera and Lifer identifies what you've found. The clearer the photo, the higher the confidence — so creep a little closer and frame it well.</p>
+          <ul class="feat">
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Identifies the bird in front of you, with a confidence read.</li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Works on the trail — captures queue and sync when you're back online.</li>
+          </ul>
+          <div class="inline-phone"><div class="phone"><img src="img/02-capture.png" alt="The Lifer capture screen — a painterly coastal scene with the feature-species card and wattle shutter button" width="945" height="1828"></div></div>
+        </div>
+
+        <div class="ccc-step" data-step="1">
+          <div class="num">02</div>
+          <div class="word">Collect</div>
+          <h3>Build an aviary that's only yours.</h3>
+          <p>Every capture lands in your Aviary — your personal collection. Watch it grow from your first Magpie to the rare find you chased for weeks.</p>
+          <ul class="feat">
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>A real life list, open-ended.</li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Personalise your aviary. Tap any card for field notes.</li>
+          </ul>
+          <div class="inline-phone"><div class="phone"><img src="img/01-aviary.png" alt="The Lifer aviary grid of bird cards" width="945" height="1832"></div></div>
+        </div>
+
+        <div class="ccc-step" data-step="2">
+          <div class="num">03</div>
+          <div class="word">Compete</div>
+          <h3>Let the birding games begin.</h3>
+          <p>Friends, leaderboards, streaks, multipliers, badges and more. Climb the global board, or just your flock's — friends you actually go birding with.</p>
+          <ul class="feat">
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Global and friends leaderboards, your rank always in view.</li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Chase the feature species for extra points.</li>
+          </ul>
+          <div class="inline-phone"><div class="phone"><img src="img/04-leaderboard.png" alt="The Lifer leaderboard ranking birders by field points and lifers" width="945" height="1832"></div></div>
+        </div>
+      </div>
+
+      <div class="ccc-phone-col">
+        <div class="ccc-phone-stack" id="phoneStack">
+          <div class="phone active" data-phone="0"><img src="img/02-capture.png" alt="The Lifer capture screen" width="945" height="1828"></div>
+          <div class="phone" data-phone="1"><img src="img/01-aviary.png" alt="The Lifer aviary grid" width="945" height="1832"></div>
+          <div class="phone" data-phone="2"><img src="img/04-leaderboard.png" alt="The Lifer leaderboard" width="945" height="1832"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DISCOVER ===================== -->
+<section class="discover section" id="discover" data-screen-label="Discover">
+  <div class="wrap discover-grid">
+    <div class="discover-phone reveal">
+      <div class="phone"><img src="img/05-discover.png" alt="The Lifer Discover screen — a searchable list of bird species with photos and scientific names, ticks marking the ones already in your aviary" width="945" height="1832" loading="lazy"></div>
+    </div>
+    <div class="discover-copy reveal">
+      <span class="overline">Discover</span>
+      <h2>A field guide to the birds around you.</h2>
+      <p>Right in your back pocket. Look up any species, learn what to watch for, and know what you're chasing before you find it.</p>
+      <div class="discover-tags">
+        <span class="chip"><span class="d"></span>Field Notes</span>
+        <span class="chip"><span class="d"></span>Conservation status</span>
+        <span class="chip"><span class="d"></span>Species worldwide</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MAP / LOCAL ===================== -->
+<section class="local section" id="local" data-screen-label="Your patch">
+  <div class="wrap local-grid">
+    <div class="local-copy reveal">
+      <span class="overline">Your patch</span>
+      <h2>Adventure starts just outside your <em>door</em>.</h2>
+      <p>Every capture, pinned. Your map becomes a record of where you've been birding. Search any species to see where it's been spotted, and find the hotspots worth heading to next.</p>
+      <div class="local-species">
+        <span class="sp"><span class="d" style="background:var(--cat-songbird,#E8A838)"></span>Australian Magpie</span>
+        <span class="sp"><span class="d" style="background:#A93226"></span>Osprey</span>
+        <span class="sp"><span class="d" style="background:#1F7A33"></span>Rainbow Lorikeet</span>
+        <span class="sp"><span class="d" style="background:#D4A843"></span>Wood Sandpiper</span>
+        <span class="sp"><span class="d" style="background:#4A235A"></span>Barking Owl</span>
+      </div>
+    </div>
+    <div class="local-map reveal">
+      <div class="phone"><img src="img/03-map.png" alt="The Lifer map of Newcastle with wattle pins marking the user's bird sightings across the suburb" width="945" height="1832"></div>
+      <div class="local-pin p1"><span class="d" style="background:#E8A838"></span>Magpie-lark<span class="sci">· Tighes Hill</span></div>
+      <div class="local-pin p2"><span class="d" style="background:#246F9F"></span>Pacific Gull<span class="sci">· Nobbys Beach</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="final section" id="get" data-screen-label="Get Lifer">
+  <div class="wrap reveal">
+    <img class="mark-tile" src="img/mark.png" alt="Lifer">
+    <h2>Go find <span class="gold">your</span> first bird.</h2>
+    <p>Just started? Your first lifer takes minutes. Already a twitcher? We've got you covered. Free to download, free to play.</p>
+    <div class="store-row">
+      <!-- launch-day: https://apps.apple.com/app/id6762440686 --><a class="store-badge" href="coming-soon.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 1H7a3 3 0 0 0-3 3v16a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3Zm-5 21a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6Zm6-4H6V4h12v14Z"/></svg><span class="sb-text"><span class="sb-top">Download on the</span><span class="sb-main">App Store</span></span></a>
+      <!-- launch-day: https://play.google.com/store/apps/details?id=com.liferbirding.app --><a class="store-badge" href="coming-soon.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 3.2v17.6c0 .5.5.8.9.5l9.4-5.3-3-3L4 3.2Zm12 5.6L6.7 3.5l8 4.5 1.3.8Zm3 2-2.5-1.4-2.9 2.6 2.9 2.6L19 15c.9-.5.9-1.8 0-2.3l0-1.9ZM6.7 20.5 16 15.2l-1.3.8-8 4.5Z"/></svg><span class="sb-text"><span class="sb-top">Get it on</span><span class="sb-main">Google Play</span></span></a>
+    </div>
+    <div class="final-tagline"><span>Capture</span> · <span>Collect</span> · <span>Compete</span></div>
+  </div>
+</section>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer" data-screen-label="Footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand" id="footerBrand" data-lockup="stacked">
+        <a class="brand brand-stacked" href="index.html" aria-label="Lifer home">
+          <img class="wordmark-stacked" src="img/wordmark-stacked-dark.svg" alt="Lifer — Capture · Collect · Compete" width="190">
+        </a>
+        <a class="brand brand-inline" href="index.html" aria-label="Lifer home">
+          <img class="mark" src="img/mark.png" alt="" width="38" height="38">
+          <span class="wordmark">Lifer</span>
+        </a>
+        <p>Built in Australia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Lifer</h4>
+        <ul>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#discover">Discover</a></li>
+          <li><a href="#local">Your patch</a></li>
+          <li><a href="where-to-go.html">Where to go birding</a></li>
+          <li><a href="#get">Get the app</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms of service</a></li>
+          <li><a href="delete-account.html">Delete your account</a></li>
+          <li><a href="mailto:chirp@liferbirding.com">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="aoc">
+      <h4>Acknowledgement of Country</h4>
+      <p>Lifer is built in Australia. Lifer acknowledges that we operate on the lands, waters and skies of many First Nations Peoples. We recognise the Traditional Owners of Country throughout Australia and their continuing connection to lands, waters and communities. We pay our respects to their Elders past and present.</p>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="small">© 2026 Lifer. Made in Australia.</span>
+      <span class="small"><a href="ntra.html">NTRA Pty Ltd</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Header scrolled state
+const header = document.getElementById('siteHeader');
+const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+// Reveal on scroll
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+},{threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Hero parallax (restrained)
+const heroPhone = document.getElementById('heroPhone');
+const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(heroPhone && !reduce){
+  window.addEventListener('scroll', ()=>{
+    const y = Math.min(window.scrollY, 700);
+    heroPhone.style.transform = `translateY(${y * -0.05}px)`;
+  }, {passive:true});
+}
+
+// Scroll-pinned phone swap (Capture / Collect / Compete)
+const steps = document.querySelectorAll('.ccc-step');
+const phones = document.querySelectorAll('#phoneStack .phone');
+if(steps.length && phones.length){
+  const sObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const i = +e.target.dataset.step;
+        phones.forEach(p=>p.classList.toggle('active', +p.dataset.phone===i));
+      }
+    });
+  },{threshold:0.5});
+  steps.forEach(s=>sObs.observe(s));
+}
+</script>
 
 </body>
 </html>
