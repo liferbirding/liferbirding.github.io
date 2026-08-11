@@ -108,19 +108,21 @@ p{margin:0;text-wrap:pretty;}
 .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line-2);}
 .btn-ghost:hover{border-color:var(--ink);}
 
-/* ---- Store badges (original — not Apple/Google marks) ---- */
-.store-row{display:flex;flex-wrap:wrap;gap:12px;}
+/* ---- Store badges — official Apple / Google artwork ----
+   The badge images are supplied artwork and must never be restyled:
+   no background, padding, border-radius, filter or recolour goes on
+   or behind them. The anchor is a bare wrapper; only the hover lift
+   (which moves the link, not the artwork) is ours. Both render at the
+   same 52px height, which satisfies Apple's 40px minimum and Google's
+   "no smaller than the badges beside it" rule at once. The 14px row
+   gap is Apple's clear-space minimum of 1/4 the badge height (13px). */
+.store-row{display:flex;flex-wrap:wrap;gap:14px;}
 .store-badge{
-  display:inline-flex;align-items:center;gap:12px;
-  background:var(--ink);color:var(--sand);
-  border-radius:14px;padding:11px 20px 11px 17px;
-  transition:transform .12s var(--ease),background .2s var(--ease);
+  display:inline-flex;
+  transition:transform .12s var(--ease);
 }
-.store-badge:hover{transform:translateY(-2px);background:#000;}
-.store-badge svg{width:24px;height:24px;flex:none;}
-.store-badge .sb-text{display:flex;flex-direction:column;line-height:1.1;text-align:left;}
-.store-badge .sb-top{font-size:10px;letter-spacing:.04em;color:var(--night-text-muted);text-transform:uppercase;}
-.store-badge .sb-main{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:-.01em;}
+.store-badge:hover{transform:translateY(-2px);}
+.store-badge img{height:52px;width:auto;display:block;}
 
 /* ---- Stat band — the signature motif ---- */
 .stat-band{
