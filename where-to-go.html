@@ -85,11 +85,20 @@
     </nav>
     <div class="header-cta">
       <a class="btn btn-wattle" href="index.html#get">Get Lifer</a>
-      <button class="menu-toggle" aria-label="Menu">
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
       </button>
     </div>
   </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <ul>
+      <li><a href="index.html#how">How it works</a></li>
+      <li><a href="index.html#discover">Discover</a></li>
+      <li><a href="index.html#local">Your patch</a></li>
+      <li><a href="where-to-go.html" aria-current="page">Directory</a></li>
+    </ul>
+    <a class="btn btn-wattle" href="index.html#get">Get Lifer</a>
+  </nav>
 </header>
 
 <main>
@@ -239,5 +248,6 @@ const io=new IntersectionObserver((entries)=>{
 },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
+<script src="lifer-site.js" defer></script>
 </body>
 </html>

@@ -230,7 +230,7 @@
 /* ---------- RESPONSIVE ---------- */
 @media (max-width:960px){
   .hero-grid{grid-template-columns:1fr;gap:48px;}
-  .hero-phone-col{order:-1;}
+  .hero-phone-col{display:none;}
   .sig-head{grid-template-columns:1fr;gap:18px;}
   .why-grid{grid-template-columns:1fr;}
   .local-grid{grid-template-columns:1fr;gap:48px;}
@@ -276,11 +276,20 @@
     </nav>
     <div class="header-cta">
       <a class="btn btn-wattle" href="#get">Get Lifer</a>
-      <button class="menu-toggle" aria-label="Menu">
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
       </button>
     </div>
   </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <ul>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#discover">Discover</a></li>
+      <li><a href="#local">Your patch</a></li>
+      <li><a href="where-to-go.html">Directory</a></li>
+    </ul>
+    <a class="btn btn-wattle" href="#get">Get Lifer</a>
+  </nav>
 </header>
 
 <main>
@@ -304,7 +313,7 @@
       <div class="hero-blob"></div>
       <span class="hero-disc d1"></span>
       <span class="hero-disc d2"></span>
-      <div class="phone hero-phone" id="heroPhone"><img src="img/01-aviary.png" alt="The Lifer aviary — a grid of captured bird cards with a dark stat band showing 35 captures, 16 lifers, 6 bird types" width="945" height="1832" fetchpriority="high"></div>
+      <div class="phone hero-phone" id="heroPhone"><img src="img/01-aviary.webp" alt="The Lifer aviary — a grid of captured bird cards with a dark stat band showing 35 captures, 16 lifers, 6 bird types" width="945" height="1832" fetchpriority="high" loading="lazy"></div>
       <div class="hero-chip c1">
         <span class="hc-dot"><b>24</b></span>
         <span class="hc-t"><small>Lifers</small><strong>In your aviary</strong></span>
@@ -358,7 +367,7 @@
             <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Identifies the bird in front of you, with a confidence read.</li>
             <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Works on the trail — captures queue and sync when you're back online.</li>
           </ul>
-          <div class="inline-phone"><div class="phone"><img src="img/02-capture.png" alt="The Lifer capture screen — a painterly coastal scene with the feature-species card and wattle shutter button" width="945" height="1828"></div></div>
+          <div class="inline-phone"><div class="phone"><img src="img/02-capture.webp" alt="The Lifer capture screen — a painterly coastal scene with the feature-species card and wattle shutter button" width="945" height="1828" loading="lazy"></div></div>
         </div>
 
         <div class="ccc-step" data-step="1">
@@ -370,7 +379,7 @@
             <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>A real life list, open-ended.</li>
             <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Personalise your aviary. Tap any card for field notes.</li>
           </ul>
-          <div class="inline-phone"><div class="phone"><img src="img/01-aviary.png" alt="The Lifer aviary grid of bird cards" width="945" height="1832"></div></div>
+          <div class="inline-phone"><div class="phone"><img src="img/01-aviary.webp" alt="The Lifer aviary grid of bird cards" width="945" height="1832" loading="lazy"></div></div>
         </div>
 
         <div class="ccc-step" data-step="2">
@@ -382,15 +391,15 @@
             <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Global and friends leaderboards, your rank always in view.</li>
             <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Chase the feature species for extra points.</li>
           </ul>
-          <div class="inline-phone"><div class="phone"><img src="img/04-leaderboard.png" alt="The Lifer leaderboard ranking birders by field points and lifers" width="945" height="1832"></div></div>
+          <div class="inline-phone"><div class="phone"><img src="img/04-leaderboard.webp" alt="The Lifer leaderboard ranking birders by field points and lifers" width="945" height="1832" loading="lazy"></div></div>
         </div>
       </div>
 
       <div class="ccc-phone-col">
         <div class="ccc-phone-stack" id="phoneStack">
-          <div class="phone active" data-phone="0"><img src="img/02-capture.png" alt="The Lifer capture screen" width="945" height="1828"></div>
-          <div class="phone" data-phone="1"><img src="img/01-aviary.png" alt="The Lifer aviary grid" width="945" height="1832"></div>
-          <div class="phone" data-phone="2"><img src="img/04-leaderboard.png" alt="The Lifer leaderboard" width="945" height="1832"></div>
+          <div class="phone active" data-phone="0"><img src="img/02-capture.webp" alt="The Lifer capture screen" width="945" height="1828" loading="lazy"></div>
+          <div class="phone" data-phone="1"><img src="img/01-aviary.webp" alt="The Lifer aviary grid" width="945" height="1832" loading="lazy"></div>
+          <div class="phone" data-phone="2"><img src="img/04-leaderboard.webp" alt="The Lifer leaderboard" width="945" height="1832" loading="lazy"></div>
         </div>
       </div>
     </div>
@@ -401,7 +410,7 @@
 <section class="discover section" id="discover" data-screen-label="Discover">
   <div class="wrap discover-grid">
     <div class="discover-phone reveal">
-      <div class="phone"><img src="img/05-discover.png" alt="The Lifer Discover screen — a searchable list of bird species with photos and scientific names, ticks marking the ones already in your aviary" width="945" height="1832" loading="lazy"></div>
+      <div class="phone"><img src="img/05-discover.webp" alt="The Lifer Discover screen — a searchable list of bird species with photos and scientific names, ticks marking the ones already in your aviary" width="945" height="1832" loading="lazy"></div>
     </div>
     <div class="discover-copy reveal">
       <span class="overline">Discover</span>
@@ -432,7 +441,7 @@
       </div>
     </div>
     <div class="local-map reveal">
-      <div class="phone"><img src="img/03-map.png" alt="The Lifer map of Newcastle with wattle pins marking the user's bird sightings across the suburb" width="945" height="1832"></div>
+      <div class="phone"><img src="img/03-map.webp" alt="The Lifer map of Newcastle with wattle pins marking the user's bird sightings across the suburb" width="945" height="1832" loading="lazy"></div>
       <div class="local-pin p1"><span class="d" style="background:#E8A838"></span>Magpie-lark<span class="sci">· Tighes Hill</span></div>
       <div class="local-pin p2"><span class="d" style="background:#246F9F"></span>Pacific Gull<span class="sci">· Nobbys Beach</span></div>
     </div>
@@ -539,5 +548,6 @@ if(steps.length && phones.length){
 }
 </script>
 
+<script src="lifer-site.js" defer></script>
 </body>
 </html>
