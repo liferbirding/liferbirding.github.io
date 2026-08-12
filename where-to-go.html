@@ -67,6 +67,29 @@
 .wtg-partner .pt-email:hover{text-decoration:underline;text-underline-offset:3px;}
 .wtg-partner .btn{position:relative;z-index:1;}
 @media(max-width:600px){.wtg-legend{flex-direction:column;align-items:flex-start;gap:10px;}.wtg-legend .sep{display:none;}}
+
+/* ---------- Australia card — the register ---------- */
+.regions-jump{gap:9px;}
+.regions-jump .rg{transition:background .15s var(--ease),border-color .15s var(--ease),color .15s var(--ease);}
+.regions-jump .rg:hover{background:var(--ink);border-color:var(--ink);color:var(--sand);}
+.regions-jump .rg .n{font-family:var(--mono);font-size:11.5px;color:var(--faint);}
+.regions-jump .rg:hover .n{color:var(--wattle);}
+.regions-jump .rg:hover .d{background:var(--wattle);}
+
+.au-groups{display:flex;flex-direction:column;gap:clamp(30px,3.4vw,44px);border-top:1px solid var(--line);padding-top:clamp(26px,3vw,36px);}
+.au-group{scroll-margin-top:104px;}
+.au-head{display:flex;align-items:baseline;gap:14px;padding-bottom:12px;border-bottom:2px solid var(--ink);}
+.au-head h3{font-family:var(--display);font-weight:800;font-size:clamp(21px,2.6vw,30px);letter-spacing:-.02em;line-height:1.05;}
+.au-head .au-ct{margin-left:auto;flex:none;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gum);}
+.au-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));column-gap:clamp(24px,3.2vw,44px);row-gap:0;}
+.au-item{padding:18px 0 20px;scroll-margin-top:104px;display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--line);}
+.au-item:target{background:var(--wattle-lt);padding-inline:14px;margin-inline:-14px;}
+.au-item h4{font-family:var(--display);font-weight:800;font-size:clamp(17px,1.8vw,20px);letter-spacing:-.02em;line-height:1.15;margin:0;color:var(--ink);}
+.au-item p{color:var(--ink-2);font-size:14.5px;line-height:1.6;}
+.au-item .visit{margin-top:auto;padding-top:4px;align-self:flex-start;display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--wattle-dk);}
+.au-item .visit svg{width:12px;height:12px;flex:none;}
+.au-item .visit:hover{text-decoration:underline;text-underline-offset:3px;}
+@media(max-width:700px){.au-list{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -112,8 +135,8 @@
 
 <div class="wrap section">
   <div class="wtg-intro reveal">
-    <p>Great birding starts with knowing where to look. This directory gathers the wetlands, woodlands, coastlines and city parks worth the trip — organised by country and region, so you can plan a morning out wherever you are.</p>
-    <p>We're building it with local venues, reserves and birding partners. Some offer perks for <strong>Lifer&nbsp;Pro</strong> members, marked with the gold gem below.</p>
+    <p>Great birding starts with knowing where to look. Discover great birding spots, from wetlands and rainforests to coastlines, woodlands and city parks. Organised by country and region, so you can find your next birding adventure wherever you are.</p>
+    <p>We're building it with local venues, reserves and birding partners. Look for the gold gem for places offering <strong>Lifer&nbsp;Pro</strong> member perks.</p>
   </div>
 
   <div class="wtg-legend reveal">
@@ -126,18 +149,90 @@
   <div class="wtg-countries">
     <!-- AUSTRALIA -->
     <section class="country reveal" data-screen-label="Australia">
-      <div class="country-head"><span class="flag">🇦🇺</span><h2>Australia</h2><span class="ct">8 states &amp; territories</span></div>
-      <div class="regions">
-        <span class="rg"><span class="d"></span>New South Wales</span>
-        <span class="rg"><span class="d"></span>Victoria</span>
-        <span class="rg"><span class="d"></span>Queensland</span>
-        <span class="rg"><span class="d"></span>South Australia</span>
-        <span class="rg"><span class="d"></span>Western Australia</span>
-        <span class="rg"><span class="d"></span>Tasmania</span>
-        <span class="rg"><span class="d"></span>ACT</span>
-        <span class="rg"><span class="d"></span>Northern Territory</span>
+      <div class="country-head"><span class="flag">🇦🇺</span><h2>Australia</h2><span class="ct">31 places</span></div>
+      <div class="regions regions-jump">
+        <a class="rg" href="#hunter"><span class="d"></span>Hunter<span class="n">5</span></a>
+        <a class="rg" href="#new-south-wales"><span class="d"></span>New South Wales<span class="n">11</span></a>
+        <a class="rg" href="#victoria"><span class="d"></span>Victoria<span class="n">3</span></a>
+        <a class="rg" href="#queensland"><span class="d"></span>Queensland<span class="n">4</span></a>
+        <a class="rg" href="#western-australia"><span class="d"></span>Western Australia<span class="n">2</span></a>
+        <a class="rg" href="#tasmania"><span class="d"></span>Tasmania<span class="n">1</span></a>
+        <a class="rg" href="#northern-territory"><span class="d"></span>Northern Territory<span class="n">3</span></a>
+        <a class="rg" href="#australian-capital-territory"><span class="d"></span>Australian Capital Territory<span class="n">2</span></a>
       </div>
-      <div class="country-empty"><span class="badge">Coming soon</span><span>Check back soon, or list your venue below.</span></div>
+      <div class="au-groups">
+      <section class="au-group" id="hunter" data-screen-label="Hunter">
+        <div class="au-head"><h3>Hunter</h3><span class="au-ct">5 places</span></div>
+        <ul class="au-list">
+          <li class="au-item" id="hunter-wetlands"><h4>Hunter Wetlands Centre</h4><p>A Ramsar-listed wetland on the edge of Newcastle, with trails and a dedicated birdwatching area across the ponds and reedbeds. One of the best local sites for Magpie Geese, Freckled Duck and migratory waders.</p><a class="visit" href="https://www.wetlands.org.au" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+          <li class="au-item" id="hunter-botanic-gardens"><h4>Hunter Region Botanic Gardens</h4><p>Extensive grevillea and native-plant collections that draw honeyeaters and Eastern Spinebills. There is a cafe and nursery on site.</p><a class="visit" href="https://www.huntergardens.org.au" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+          <li class="au-item" id="tilligerry-habitat"><h4>Tilligerry Habitat</h4><p>A volunteer-run koala reserve on Port Stephens with a foreshore boardwalk. Good for honeyeaters and White-bellied Sea-Eagles.</p><a class="visit" href="https://www.tilligerryhabitat.au" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+          <li class="au-item" id="oakvale-wildlife"><h4>Oakvale Wildlife Park</h4><p>A hands-on, ZAA-accredited wildlife park near Port Stephens with free-ranging kangaroos and a walk-in aviary.</p><a class="visit" href="https://oakvalewildlife.com.au" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+          <li class="au-item" id="blackbutt-reserve"><h4>Blackbutt Reserve</h4><p>A City of Newcastle bushland reserve with free wildlife exhibits and a network of trails. Superb Lyrebirds and Eastern Whipbirds are heard along the tracks.</p><a class="visit" href="https://newcastle.nsw.gov.au/blackbutt-reserve" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+        </ul>
+      </section>
+      <section class="au-group" id="new-south-wales" data-screen-label="New South Wales">
+        <div class="au-head"><h3>New South Wales</h3><span class="au-ct">11 places</span></div>
+        <ul class="au-list">
+          <li class="au-item" id="booderee-botanic-gardens"><h4>Booderee Botanic Gardens</h4><p>Australia's only Aboriginal-owned botanic garden, on Jervis Bay. The Jervis Bay area is a stronghold for the endangered Eastern Bristlebird.</p><a class="visit" href="https://booderee.gov.au/things-do/visit/botanic-gardens/" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+          <li class="au-item" id="warrumbungle-visitor-centre"><h4>Warrumbungle Visitor Centre</h4><p>The gateway to Warrumbungle National Park, Australia's first Dark Sky Park. Turquoise Parrots and Diamond Firetails are among the birds found here, and the centre has interpretive displays.</p><a class="visit" href="https://www.nationalparks.nsw.gov.au/things-to-do/visitor-centres/warrumbungle-visitor-centre" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+          <li class="au-item" id="royal-botanic-sydney"><h4>Royal Botanic Garden Sydney</h4><p>Harbourside gardens in central Sydney with more than 140 recorded bird species. The resident Powerful Owls and Tawny Frogmouths are the best-known of them, and there is a Visitor Centre on site.</p><a class="visit" href="https://www.botanicgardens.org.au/royal-botanic-garden-sydney" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+          <li class="au-item" id="mount-tomah"><h4>Blue Mountains Botanic Garden Mount Tomah</h4><p>A cool-climate botanic garden at around 1,000 metres in the Blue Mountains. Gang-gang Cockatoos and Crimson Rosellas are regular, and there is a visitor centre and cafe.</p><a class="visit" href="https://www.botanicgardens.org.au/blue-mountains-botanic-garden-mount-tomah" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+          <li class="au-item" id="mount-annan"><h4>Australian Botanic Garden Mount Annan</h4><p>Australia's largest botanic garden, with free-ranging Emus and wetlands that draw honeyeaters and waterbirds. Visitor centre and cafe on site.</p><a class="visit" href="https://www.botanicgardens.org.au/australian-botanic-garden-mount-annan" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+          <li class="au-item" id="bicentennial-park"><h4>Bicentennial Park (Sydney Olympic Park)</h4><p>Estuarine wetlands and parkland at Sydney Olympic Park, with over 200 bird species recorded. The wetlands host migratory shorebirds including Latham's Snipe.</p><a class="visit" href="https://www.sydneyolympicpark.nsw.gov.au/parks-and-playgrounds/bicentennial-park" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+          <li class="au-item" id="taronga-sydney"><h4>Taronga Zoo Sydney</h4><p>A harbourside zoo with a long-running free-flight bird show. Wild Powerful Owls also turn up in the grounds.</p><a class="visit" href="https://www.taronga.org.au/sydney-zoo" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+          <li class="au-item" id="deniliquin-peppin"><h4>Deniliquin Visitor Information &amp; Peppin Heritage Centre</h4><p>The Riverina visitor centre that serves as the base for Deniliquin's Plains-wanderer night tours.</p><a class="visit" href="http://www.denitourism.com.au" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+          <li class="au-item" id="sea-acres"><h4>Sea Acres Rainforest Centre</h4><p>An elevated boardwalk through coastal littoral rainforest at Port Macquarie, good for Wonga Pigeons and Rufous Fantails. NPWS-run, with a cafe and shop.</p><a class="visit" href="https://www.nationalparks.nsw.gov.au/things-to-do/visitor-centres/sea-acres-rainforest-centre" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+          <li class="au-item" id="dorrigo-rainforest"><h4>Dorrigo Rainforest Centre</h4><p>The NPWS centre for World Heritage Gondwana rainforest at Dorrigo, with the Rainforest Skywalk over the canopy. Regent and Satin Bowerbirds and Paradise Riflebirds occur here.</p><a class="visit" href="https://www.nationalparks.nsw.gov.au/things-to-do/visitor-centres/dorrigo-rainforest-centre" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+          <li class="au-item" id="blue-mountains-heritage"><h4>Blue Mountains Heritage Centre</h4><p>The NPWS gateway to the Blue Mountains at Blackheath, with displays and a shop. Nearby trails hold Superb Lyrebirds, Gang-gang Cockatoos and the NSW-endemic Rockwarbler.</p><a class="visit" href="https://www.nationalparks.nsw.gov.au/things-to-do/visitor-centres/blue-mountains-heritage-centre" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+        </ul>
+      </section>
+      <section class="au-group" id="victoria" data-screen-label="Victoria">
+        <div class="au-head"><h3>Victoria</h3><span class="au-ct">3 places</span></div>
+        <ul class="au-list">
+          <li class="au-item" id="healesville-sanctuary"><h4>Healesville Sanctuary</h4><p>A Zoos Victoria sanctuary, and home to the Helmeted Honeyeater breeding programme — the recovery centre for Victoria's critically endangered bird emblem.</p><a class="visit" href="https://www.zoo.org.au/healesville/" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+          <li class="au-item" id="phillip-island"><h4>Phillip Island Nature Parks</h4><p>Home of the Penguin Parade, where Little Penguins come ashore in front of visitors. Summer brings rafts of Short-tailed Shearwaters back to their burrows.</p><a class="visit" href="https://www.penguins.org.au/" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+          <li class="au-item" id="serendip-sanctuary"><h4>Serendip Sanctuary</h4><p>A Parks Victoria sanctuary with long-running Brolga and Australian Bustard breeding, set among open wetlands full of waterbirds.</p><a class="visit" href="https://www.parks.vic.gov.au/places-to-see/parks/serendip-sanctuary" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+        </ul>
+      </section>
+      <section class="au-group" id="queensland" data-screen-label="Queensland">
+        <div class="au-head"><h3>Queensland</h3><span class="au-ct">4 places</span></div>
+        <ul class="au-list">
+          <li class="au-item" id="currumbin-sanctuary"><h4>Currumbin Wildlife Sanctuary</h4><p>A National Trust sanctuary on the Gold Coast, where the wild Rainbow Lorikeet feeding has been a birding spectacle for decades.</p><a class="visit" href="https://currumbinsanctuary.com.au/" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+          <li class="au-item" id="oreillys-rainforest"><h4>O'Reilly's Rainforest Retreat</h4><p>A long-established birding retreat in Lamington National Park. Regent Bowerbirds feed from the hand and Albert's Lyrebird calls through the surrounding rainforest.</p><a class="visit" href="https://oreillys.com.au/" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+          <li class="au-item" id="daintree-discovery"><h4>Daintree Discovery Centre</h4><p>An aerial walkway and canopy tower through the Daintree rainforest, in prime Southern Cassowary country.</p><a class="visit" href="https://www.discoverthedaintree.com/" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+          <li class="au-item" id="cairns-botanic"><h4>Cairns Botanic Gardens</h4><p>Tropical rainforest gardens in Cairns, alive with Orange-footed Scrubfowl, Double-eyed Fig-Parrots and Metallic Starlings.</p><a class="visit" href="https://www.cairns.qld.gov.au/experience-cairns/botanic-gardens" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+        </ul>
+      </section>
+      <section class="au-group" id="western-australia" data-screen-label="Western Australia">
+        <div class="au-head"><h3>Western Australia</h3><span class="au-ct">2 places</span></div>
+        <ul class="au-list">
+          <li class="au-item" id="kings-park"><h4>Kings Park and Botanic Garden</h4><p>Bushland and botanic garden above the Swan River in Perth, where flocks of the endangered Carnaby's Black-Cockatoo come in to feed.</p><a class="visit" href="https://www.bgpa.wa.gov.au/" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+          <li class="au-item" id="herdsman-lake"><h4>Herdsman Lake Discovery Centre (Wildlife Centre)</h4><p>One of Perth's richest wetlands for crakes, rails and nesting waterbirds, minutes from the city. Run by the WA Gould League.</p><a class="visit" href="https://www.wagouldleague.com.au/" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+        </ul>
+      </section>
+      <section class="au-group" id="tasmania" data-screen-label="Tasmania">
+        <div class="au-head"><h3>Tasmania</h3><span class="au-ct">1 place</span></div>
+        <ul class="au-list">
+          <li class="au-item" id="inala-bruny"><h4>Inala Nature Museum &amp; Jurassic Garden</h4><p>On Bruny Island, the gateway to the endangered Forty-spotted Pardalote and all twelve Tasmanian endemics.</p><a class="visit" href="https://inalanature.com.au/" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+        </ul>
+      </section>
+      <section class="au-group" id="northern-territory" data-screen-label="Northern Territory">
+        <div class="au-head"><h3>Northern Territory</h3><span class="au-ct">3 places</span></div>
+        <ul class="au-list">
+          <li class="au-item" id="territory-wildlife-park"><h4>Territory Wildlife Park</h4><p>A walk-through monsoon aviary and a free-flight birds-of-prey show, both built around Top End species.</p><a class="visit" href="https://territorywildlifepark.com.au/" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+          <li class="au-item" id="alice-springs-desert-park"><h4>Alice Springs Desert Park</h4><p>Arid-zone aviaries and a nocturnal house, plus a free-flight show whose Black-breasted Buzzard cracks eggs with stones.</p><a class="visit" href="https://alicespringsdesertpark.com.au/" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+          <li class="au-item" id="bowali-kakadu"><h4>Bowali Visitor Centre (Kakadu National Park)</h4><p>The main visitor centre for Kakadu National Park, whose wetlands hold vast flocks of Magpie Geese and over 280 recorded bird species.</p><a class="visit" href="https://kakadu.gov.au/" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+        </ul>
+      </section>
+      <section class="au-group" id="australian-capital-territory" data-screen-label="Australian Capital Territory">
+        <div class="au-head"><h3>Australian Capital Territory</h3><span class="au-ct">2 places</span></div>
+        <ul class="au-list">
+          <li class="au-item" id="anbg-canberra"><h4>Australian National Botanic Gardens</h4><p>Canberra's national collection of Australian native plants, with a rainforest gully that holds Superb Lyrebird and Gang-gang Cockatoos, the city's faunal emblem.</p><a class="visit" href="https://visit.anbg.gov.au/" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+          <li class="au-item" id="jerrabomberra-wetlands"><h4>Jerrabomberra Wetlands</h4><p>Purpose-built hides overlook Latham's Snipe, crakes and the elusive Australasian Bittern. Managed by the Woodlands and Wetlands Trust.</p><a class="visit" href="https://www.jerrabomberrawetlands.org.au/" target="_blank" rel="noopener">Visit website<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9L9 3"/><path d="M4.4 3H9v4.6"/></svg></a></li>
+        </ul>
+      </section>
+      </div>
     </section>
 
     <!-- NEW ZEALAND -->
