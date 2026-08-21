@@ -292,3 +292,11 @@ p{margin:0;text-wrap:pretty;}
   .legal-layout{grid-template-columns:1fr;gap:0;}
   .legal-toc{display:none;}
 }
+
+/* ---- Footer social ---- */
+.footer-col ul.footer-social,.footer-social{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:row;align-items:center;gap:10px;}
+.footer-social li{display:block;}
+.footer-social a{display:grid;place-items:center;width:38px;height:38px;border:1px solid rgba(255,255,255,.16);border-radius:50%;color:var(--night-text-2);transition:color .15s,border-color .15s,background .15s;}
+.footer-social a:hover{color:var(--night);background:var(--wattle);border-color:var(--wattle);}
+.footer-social svg{width:18px;height:18px;display:block;}
+
