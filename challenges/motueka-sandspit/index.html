@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Motueka Sandspit Birding Challenge · Lifer</title>
+<meta name="description" content="Motueka isite and Lifer bring you the Motueka Sandspit Birding Challenge, running until 30 November 2026. How to join, and how to watch the Sandspit's shorebirds with care.">
+<link rel="canonical" href="https://liferbirding.com/challenges/motueka-sandspit">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://liferbirding.com/lifer-site.css">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="icon" type="image/png" sizes="32x32" href="https://liferbirding.com/img/favicon.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://liferbirding.com/img/icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://liferbirding.com/img/apple-touch-icon.png">
+<style>
+.reveal{opacity:1;transform:none;}
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .6s var(--ease),transform .6s var(--ease);}
+.js .reveal.in{opacity:1;transform:none;}
+@media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none;}}
+
+/* ---------- CHALLENGE PAGE ---------- */
+.legal-hero h1{text-wrap:balance;max-width:20ch;font-size:clamp(34px,6.2vw,76px);}
+.ch-section{padding-block:clamp(40px,6vw,72px) clamp(64px,9vw,120px);}
+.ch-col{max-width:760px;margin:0 auto;}
+.ch-intro{margin-bottom:clamp(32px,4.5vw,48px);}
+.ch-intro p{color:var(--ink-2);font-size:clamp(16px,1.5vw,19px);line-height:1.65;margin-top:16px;}
+.ch-intro .ch-lede{color:var(--ink);font-weight:500;font-size:clamp(17px,1.7vw,21px);line-height:1.55;margin-top:0;}
+.ch-lockup{display:flex;align-items:center;justify-content:center;gap:clamp(14px,3.5vw,36px);margin:0 auto clamp(26px,4vw,36px);flex-wrap:nowrap}
+.ch-lockup .lk{display:flex;flex-direction:column;align-items:center;text-align:center;flex:none}
+.ch-lockup .word{font-family:var(--display);font-weight:900;font-size:clamp(34px,5.6vw,52px);line-height:.82;letter-spacing:-.055em;color:var(--ink)}
+.ch-lockup .lk-tag{margin-top:8px;display:flex;align-items:center;gap:7px}.ch-lockup .rule{width:clamp(12px,3vw,26px);height:2px;background:var(--wattle)}.ch-lockup .txt{font-family:var(--display);font-weight:800;font-size:clamp(9.5px,1.4vw,12px);letter-spacing:.1em;text-transform:uppercase;color:var(--wattle);white-space:nowrap}
+.ch-lockup .ch-x{width:clamp(40px,6.6vw,62px);height:clamp(40px,6.6vw,62px);flex:none}
+.ch-lockup .tile{display:grid;place-items:center;border-radius:14px;padding:clamp(10px,1.6vw,16px) clamp(14px,2.2vw,22px);flex:none;height:clamp(84px,13vw,120px);box-sizing:border-box;}
+.ch-lockup .tile-partner{background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);text-decoration:none;transition:box-shadow .15s var(--ease),border-color .15s var(--ease);}
+.ch-lockup .tile-partner:hover{box-shadow:var(--shadow-lift);border-color:var(--line-2);}
+.ch-lockup .tile-lifer{background:var(--ink);text-decoration:none;box-shadow:var(--shadow);transition:box-shadow .15s var(--ease);}
+.ch-lockup .tile-lifer:hover{box-shadow:var(--shadow-lift);}
+.ch-lockup .tile-lifer .word{color:var(--night-text);}
+.ch-lockup .partner{display:block;height:clamp(60px,9.6vw,88px);width:auto;flex:none}
+@media (max-width:400px){.ch-lockup{gap:10px}.ch-lockup .tile{height:70px;padding:8px 12px;border-radius:11px}.ch-lockup .partner{height:52px}.ch-lockup .word{font-size:30px}.ch-lockup .lk-tag{gap:5px}.ch-lockup .rule{width:8px}.ch-lockup .txt{font-size:8.5px}.ch-lockup .ch-x{width:34px;height:34px}}
+
+.ch-cards{display:flex;flex-direction:column;gap:clamp(20px,2.6vw,30px);}
+.ch-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:clamp(24px,3vw,40px);box-shadow:var(--shadow);}
+.ch-card h2{font-size:clamp(24px,2.8vw,34px);letter-spacing:-.02em;margin:0;text-wrap:balance;}
+.ch-card p{margin-top:16px;color:var(--ink-2);font-size:16px;line-height:1.7;}
+.ch-card p strong{color:var(--ink);font-weight:600;}
+.ch-card a{color:var(--wattle-dk);text-decoration:underline;text-underline-offset:2px;font-weight:500;}
+.ch-card .store-badge{text-decoration:none;}
+.ch-bridge{margin:clamp(28px,4vw,40px) auto 0;color:var(--ink-2);font-size:16px;line-height:1.7;text-align:center;max-width:56ch;}
+
+.ch-steps{list-style:none;margin:22px 0 0;padding:0;counter-reset:step;display:flex;flex-direction:column;gap:18px;}
+.ch-steps li{position:relative;padding-left:46px;color:var(--ink);font-size:16px;line-height:1.6;counter-increment:step;}
+.ch-steps li::before{content:counter(step);position:absolute;left:0;top:-1px;width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--wattle);font-family:var(--display);font-weight:800;font-size:14px;display:grid;place-items:center;}
+.ch-steps .store-row{margin-top:14px;}
+.ch-steps .store-badge img{height:48px;}
+.ch-notes{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);}
+.ch-notes p:first-child{margin-top:0;}
+
+.ch-care{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:14px;}
+.ch-care li{padding:2px 0 2px 18px;border-left:3px solid var(--euca);color:var(--ink-2);font-size:16px;line-height:1.6;}
+.ch-care li b{color:var(--ink);font-weight:600;}
+
+.ch-highlight{background:var(--wattle-lt);border-radius:14px;padding:20px 22px;margin-top:26px;}
+.ch-highlight p{margin:0;color:var(--ink);font-family:var(--display);font-weight:800;font-size:clamp(18px,2vw,22px);letter-spacing:-.015em;line-height:1.3;}
+
+.ch-links{margin-top:26px;display:flex;flex-direction:column;gap:12px;}
+.ch-links p{margin:0;}
+.ch-links a{overflow-wrap:anywhere;}
+.ch-credit{margin-top:26px !important;font-style:italic;font-size:14.5px !important;}
+@media (max-width:520px){
+  .ch-steps li{padding-left:42px;}
+  .ch-steps .store-row{flex-direction:column;align-items:flex-start;gap:10px;}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader" data-screen-label="Header">
+  <div class="wrap">
+    <a class="brand" href="https://liferbirding.com/" aria-label="Lifer home">
+      <img class="mark" src="https://liferbirding.com/img/mark.png" alt="Lifer">
+      <span class="wordmark">Lifer</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="https://liferbirding.com/#how">How it works</a>
+      <a href="https://liferbirding.com/#discover">Discover</a>
+      <a href="https://liferbirding.com/#local">Your patch</a>
+      <a href="https://liferbirding.com/where-to-go">Directory</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-wattle" href="https://liferbirding.com/#get">Get Lifer</a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <ul>
+      <li><a href="https://liferbirding.com/#how">How it works</a></li>
+      <li><a href="https://liferbirding.com/#discover">Discover</a></li>
+      <li><a href="https://liferbirding.com/#local">Your patch</a></li>
+      <li><a href="https://liferbirding.com/where-to-go">Directory</a></li>
+    </ul>
+    <a class="btn btn-wattle" href="https://liferbirding.com/#get">Get Lifer</a>
+  </nav>
+</header>
+
+<main>
+<section class="legal-hero" data-screen-label="Challenge hero">
+  <div class="wrap">
+    <span class="overline">Challenge</span>
+    <h1>The Motueka Sandspit Birding Challenge</h1>
+  </div>
+</section>
+
+<div class="wrap ch-section">
+  <div class="ch-col">
+
+    <div class="ch-intro reveal" data-screen-label="Intro">
+    <div class="ch-lockup">
+      <a class="tile tile-partner" href="https://www.isite.nz/find-an-isite/listing/motueka-i-site-visitor-information-centre" target="_blank" rel="noopener" aria-label="Motueka isite website"><img class="partner" src="motueka-isite.png" alt="Motueka isite" width="372" height="182"></a>
+      <svg class="ch-x" viewBox="-120 -120 240 240" aria-hidden="true"><defs><filter id="rough3" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency=".05" numOctaves="3" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="10" xChannelSelector="R" yChannelSelector="G"/></filter><g id="print"><path d="M0 0 L-9 -13 M0 0 L0 -16 M0 0 L9 -13 M0 0 L0 5" stroke-linecap="round" fill="none"/></g></defs><g>
+<g filter="url(#rough3)" stroke="#1C1B17" stroke-width="52" stroke-linecap="butt" fill="none"><path d="M-95 -95 L95 95"/><path d="M95 -95 L-95 95"/></g>
+<g fill="none" stroke="#F7F1E7" stroke-width="3.2" stroke-linecap="round">
+<g transform="rotate(45)"><use href="#print" transform="translate(6,-112) scale(.7)"/><use href="#print" transform="translate(-6,-84) scale(.7)"/><use href="#print" transform="translate(6,-56) scale(.7)"/><use href="#print" transform="translate(-6,-28) scale(.7)"/><use href="#print" transform="translate(6,0) scale(.7)"/><use href="#print" transform="translate(-6,28) scale(.7)"/><use href="#print" transform="translate(6,56) scale(.7)"/><use href="#print" transform="translate(-6,84) scale(.7)"/><use href="#print" transform="translate(6,112) scale(.7)"/></g>
+<g transform="rotate(-45)" fill="none" stroke="#F7F1E7" stroke-width="2.4" stroke-linecap="round"><path d="M-18 -108.0 Q-9 -110.1 0 -108.0 T18 -108.0"/><path d="M-18 -96.0 Q-9 -98.7 0 -96.0 T18 -96.0"/><path d="M-18 -84.0 Q-9 -85.4 0 -84.0 T18 -84.0"/><path d="M-18 -72.0 Q-9 -74.9 0 -72.0 T18 -72.0"/><path d="M-18 -60.0 Q-9 -64.5 0 -60.0 T18 -60.0"/><path d="M-18 -48.0 Q-9 -49.5 0 -48.0 T18 -48.0"/><path d="M-18 -36.0 Q-9 -40.0 0 -36.0 T18 -36.0"/><path d="M-18 36.0 Q-9 31.2 0 36.0 T18 36.0"/><path d="M-18 48.0 Q-9 44.6 0 48.0 T18 48.0"/><path d="M-18 60.0 Q-9 56.2 0 60.0 T18 60.0"/><path d="M-18 72.0 Q-9 70.1 0 72.0 T18 72.0"/><path d="M-18 84.0 Q-9 82.5 0 84.0 T18 84.0"/><path d="M-18 96.0 Q-9 91.4 0 96.0 T18 96.0"/><path d="M-18 108.0 Q-9 106.0 0 108.0 T18 108.0"/></g>
+</g></g></svg>
+      <a class="tile tile-lifer" href="https://liferbirding.com/" aria-label="Lifer home"><div class="lk"><div class="word">Lifer</div><div class="lk-tag"><div class="rule"></div><div class="txt">The Birding Game</div><div class="rule"></div></div></div></a>
+    </div>
+    <p class="ch-lede">Motueka isite and Lifer bring you the Motueka Sandspit Birding Challenge, running until 30 November 2026.</p>
+    <p>Lifer is a birding game. Photograph a bird, and the app identifies it and adds it to your collection. Every bird scores, with bonuses for clear photos, streaks and lifers (any species you've never recorded before). It's free to download and free to play, on iPhone and Android.</p>
+    </div>
+
+    <div class="ch-cards">
+    <section class="ch-card reveal" id="join" data-screen-label="How to join">
+      <h2>How to join</h2>
+      <ol class="ch-steps">
+        <li>Download Lifer.
+          <div class="store-row">
+            <a class="store-badge" href="https://apps.apple.com/app/lifer-birding/id6762440686" target="_blank" rel="noopener"><img src="https://liferbirding.com/img/badge-appstore.svg" alt="Download on the App Store" width="144" height="48"></a>
+            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.liferbirding.app" target="_blank" rel="noopener"><img src="https://liferbirding.com/img/badge-googleplay.webp" alt="Get it on Google Play" width="162" height="48"></a>
+          </div>
+        </li>
+        <li>Enter the challenge code from the poster at Motueka isite.</li>
+        <li>Head out to the sandspit and see what birds you can spot.</li>
+        <li>Check the challenge leaderboard to see where you rank.</li>
+      </ol>
+      <div class="ch-notes">
+      <p>The challenge has its own weekly leaderboard, with winners announced each week for most species and highest score.</p>
+      <p>Every bird you capture in the challenge goes into your Lifer collection as well.</p>
+      <p>Want to see bird names in te reo Māori? You can switch any time under <strong>Bird names</strong> in the menu.</p>
+      </div>
+    </section>
+
+    <section class="ch-card reveal" id="care" data-screen-label="Watching birds">
+      <h2>Watching birds at the Motueka Sandspit</h2>
+      <p>The Sandspit is one of the best shorebird sites in the country, and that's exactly why it needs care. Some of the birds here have just arrived from the Arctic and are refuelling after a flight of more than 11,000 km. Others nest right on the open sand. Both are easily disturbed, and every disturbance costs them.</p>
+      <p>Please respect the birds. A few things to keep in mind while you're playing:</p>
+      <ul class="ch-care">
+        <li><b>Watch from a distance.</b> Use zoom rather than steps. A photo taken from further back is worth more here than one that puts a bird up.</li>
+        <li><b>Give them space.</b> If a bird flies because of you, you were too close. If birds look uneasy, shift about, or start calling, back off and give them room.</li>
+        <li><b>Godwit flocks need extra space.</b> DOC advises watching them from a distance, as they're quick to take flight.</li>
+        <li><b>Watch for ground nesters.</b> Some shorebirds nest right on the sand, and the nests are almost invisible. If a bird seems agitated, you may be near one. Move away.</li>
+        <li><b>Follow every sign on the spit.</b> Signage marks the areas that matter most, including where dogs can and can't go.</li>
+        <li><b>Don't touch sick or dead birds.</b> Bird flu is a live concern in New Zealand. Leave them alone, and report anything you find to Biosecurity New Zealand on 0800 80 99 66.</li>
+      </ul>
+      <div class="ch-highlight">
+        <p>No bird in the game is worth disturbing a real one. If it comes down to the shot or the bird, choose the bird.</p>
+      </div>
+      <div class="ch-links">
+        <p>Find out more about the Sandspit from the <a href="https://www.doc.govt.nz/parks-and-recreation/places-to-go/nelson-tasman/places/motueka-area/motueka-sandspit/" target="_blank" rel="noopener">Department of Conservation</a>.</p>
+        <p>Find out more about watching and photographing birds responsibly from the <a href="https://www.birdsnz.org.nz/wp-content/uploads/2024/05/Code-of-Conduct-for-Photography-of-Birds-Guidelines.pdf" target="_blank" rel="noopener">Birds New Zealand code of conduct</a>.</p>
+      </div>
+      <p class="ch-credit">This guidance was developed with the Department of Conservation, Motueka District Office.</p>
+    </section>
+    </div>
+
+  </div>
+</div>
+</main>
+
+<footer class="site-footer" data-screen-label="Footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand" data-lockup="stacked">
+        <a class="brand brand-stacked" href="https://liferbirding.com/" aria-label="Lifer home">
+          <img class="wordmark-stacked" src="https://liferbirding.com/img/wordmark-stacked-dark.svg" alt="Lifer — Capture · Collect · Compete" width="190">
+        </a>
+        <a class="brand brand-inline" href="https://liferbirding.com/" aria-label="Lifer home">
+          <img class="mark" src="https://liferbirding.com/img/mark.png" alt="" width="38" height="38">
+          <span class="wordmark">Lifer</span>
+        </a>
+        <p>Built in Australia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Lifer</h4>
+        <ul>
+          <li><a href="https://liferbirding.com/#how">How it works</a></li>
+          <li><a href="https://liferbirding.com/#discover">Discover</a></li>
+          <li><a href="https://liferbirding.com/#local">Your patch</a></li>
+          <li><a href="https://liferbirding.com/where-to-go">Where to go birding</a></li>
+          <li><a href="https://liferbirding.com/#get">Get the app</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="https://liferbirding.com/privacy">Privacy policy</a></li>
+          <li><a href="https://liferbirding.com/terms">Terms of service</a></li>
+          <li><a href="https://liferbirding.com/delete-account">Delete your account</a></li>
+          <li><a href="mailto:chirp@liferbirding.com">Contact</a></li>
+        </ul>
+        <ul class="footer-social">
+          <li><a href="https://instagram.com/liferbirding" target="_blank" rel="noopener" aria-label="Lifer on Instagram"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 2h8a6 6 0 0 1 6 6v8a6 6 0 0 1-6 6H8a6 6 0 0 1-6-6V8a6 6 0 0 1 6-6Zm0 2a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V8a4 4 0 0 0-4-4H8Zm4 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM17.4 5.8a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/></svg></a></li>
+          <li><a href="https://www.facebook.com/liferbirding" target="_blank" rel="noopener" aria-label="Lifer on Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.3 21.5v-8.2h2.8l.4-3.2h-3.2V7.9c0-.9.3-1.6 1.6-1.6h1.7V3.4a23 23 0 0 0-2.5-.1c-2.5 0-4.2 1.5-4.2 4.3v2.5H7.1v3.2h2.8v8.2h3.4Z"/></svg></a></li>
+          <li><a href="https://tiktok.com/@liferbirding" target="_blank" rel="noopener" aria-label="Lifer on TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.3 2.5h-3.2v13.2a2.5 2.5 0 1 1-2.5-2.5c.2 0 .5 0 .7.1v-3.2a6 6 0 0 0-.7 0 5.7 5.7 0 1 0 5.7 5.7V8.6a7 7 0 0 0 4.1 1.4V6.8a4.1 4.1 0 0 1-4.1-4.3Z"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="aoc">
+      <h4>Acknowledgement of Country</h4>
+      <p>Lifer is built in Australia. Lifer acknowledges that we operate on the lands, waters and skies of many First Nations Peoples. We recognise the Traditional Owners of Country throughout Australia and their continuing connection to lands, waters and communities. We pay our respects to their Elders past and present.</p>
+    </div>
+    <div class="footer-bottom">
+      <span class="small">© 2026 Lifer. Made in Australia.</span>
+      <span class="small"><a href="https://liferbirding.com/ntra">NTRA Pty Ltd</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const header=document.getElementById('siteHeader');
+const onScroll=()=>header.classList.toggle('scrolled',window.scrollY>8);
+onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:0,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<script src="https://liferbirding.com/lifer-site.js" defer></script>
+</body>
+</html>
