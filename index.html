@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lifer - The Birding Game</title>
-<meta name="description" content="Lifer is The Birding Game. Capture, collect and compete — spot a bird, build your aviary, and climb the leaderboard.">
+<meta name="description" content="Capture. Collect. Compete. Capture a photo of a real bird and Lifer identifies it. Collect different species in your aviary. Compete for the top spot on the leaderboard. Free on iOS and Android.">
+<link rel="canonical" href="https://liferbirding.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -12,6 +13,76 @@
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
 <link rel="icon" type="image/png" sizes="512x512" href="img/icon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lifer - The Birding Game">
+<meta property="og:title" content="Lifer - The Birding Game">
+<meta property="og:description" content="Capture. Collect. Compete. Capture a photo of a real bird and Lifer identifies it. Collect different species in your aviary. Compete for the top spot on the leaderboard. Free on iOS and Android.">
+<meta property="og:url" content="https://liferbirding.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lifer - The Birding Game">
+<meta name="twitter:description" content="Capture. Collect. Compete. Capture a photo of a real bird and Lifer identifies it. Collect different species in your aviary. Compete for the top spot on the leaderboard. Free on iOS and Android.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://liferbirding.com/#organization",
+      "name": "NTRA Pty Ltd",
+      "url": "https://liferbirding.com",
+      "logo": "https://liferbirding.com/img/mark.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Newcastle",
+        "addressRegion": "NSW",
+        "addressCountry": "AU"
+      },
+      "sameAs": [
+        "https://apps.apple.com/app/id6762440686",
+        "https://play.google.com/store/apps/details?id=com.liferbirding.app",
+        "https://www.instagram.com/liferbirding",
+        "https://www.facebook.com/liferbirding",
+        "https://www.tiktok.com/@liferbirding",
+        "https://www.youtube.com/@LiferBirding"
+      ]
+    },
+    {
+      "@type": [
+        "MobileApplication",
+        "SoftwareApplication"
+      ],
+      "@id": "https://liferbirding.com/#app",
+      "name": "Lifer - The Birding Game",
+      "alternateName": "Lifer",
+      "url": "https://liferbirding.com",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "iOS, Android",
+      "description": "Capture. Collect. Compete. Capture a photo of a real bird and Lifer identifies it. Collect different species in your aviary. Compete for the top spot on the leaderboard.",
+      "installUrl": [
+        "https://apps.apple.com/app/id6762440686",
+        "https://play.google.com/store/apps/details?id=com.liferbirding.app"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "AUD"
+      },
+      "publisher": {
+        "@id": "https://liferbirding.com/#organization"
+      },
+      "featureList": [
+        "Capture: take a photo of a bird and Lifer identifies it",
+        "Collect: every capture in your Aviary, your personal collection",
+        "Compete: friends, leaderboards, streaks, multipliers and badges",
+        "Listen: Lifer names the birds singing around you. Sound ID runs on your phone and works offline",
+        "Upload: add bird photos from your library to your life list",
+        "Maps: every capture, pinned",
+        "Discover: a field guide to every bird around you"
+      ]
+    }
+  ]
+}
+</script>
 <style>
 /* ============ HOMEPAGE-SPECIFIC ============ */
 
@@ -299,7 +370,7 @@
     <div class="hero-copy">
       <span class="overline reveal">Your life list · in your pocket</span>
       <h1 class="reveal">Your local park is <span class="gold">louder</span> than you realised.</h1>
-      <p class="hero-sub reveal">Lifer is The Birding Game. Point your phone, log what you find, and watch your life list grow.</p>
+      <p class="hero-sub reveal">Lifer is The Birding Game. Capture a photo of a real bird and Lifer identifies it. Collect different species in your aviary. Compete for the top spot on the leaderboard.</p>
       <div class="hero-tagline reveal"><span>Capture</span><i>·</i><span>Collect</span><i>·</i><span>Compete</span></div>
       <div class="store-row reveal" style="margin-top:34px">
         <a class="store-badge" href="https://apps.apple.com/app/lifer-birding/id6762440686" target="_blank" rel="noopener"><img src="img/badge-appstore.svg" alt="Download on the App Store" width="156" height="52"></a>
@@ -313,7 +384,7 @@
       <div class="hero-blob"></div>
       <span class="hero-disc d1"></span>
       <span class="hero-disc d2"></span>
-      <div class="phone hero-phone" id="heroPhone"><img src="img/01-aviary.webp" alt="The Lifer aviary — a grid of captured bird cards with a dark stat band showing 35 captures, 16 lifers, 6 bird types" width="945" height="1832" fetchpriority="high" loading="lazy"></div>
+      <div class="phone hero-phone" id="heroPhone"><img src="img/01-aviary.webp" alt="The Lifer aviary: a grid of captured bird cards with a dark stat band showing 35 captures, 16 lifers, 6 bird types" width="945" height="1832" fetchpriority="high" loading="lazy"></div>
       <div class="hero-chip c1">
         <span class="hc-dot"><b>24</b></span>
         <span class="hc-t"><small>Lifers</small><strong>In your aviary</strong></span>
@@ -353,7 +424,7 @@
     <div class="ccc-intro reveal">
       <span class="overline">How it works</span>
       <h2>Three taps from curious to hooked.</h2>
-      <p>No field guide to memorise. No quiz to pass. You watch, you log, you climb — and you learn the birds without ever feeling like you're studying.</p>
+      <p>No field guide to memorise. No quiz to pass. You watch, you capture, you climb, and you learn the birds without ever feeling like you're studying.</p>
     </div>
 
     <div class="ccc-grid">
@@ -367,7 +438,7 @@
             <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Identifies the bird in front of you, with a confidence read.</li>
             <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Works on the trail — captures queue and sync when you're back online.</li>
           </ul>
-          <div class="inline-phone"><div class="phone"><img src="img/02-capture.webp" alt="The Lifer capture screen — a painterly coastal scene with the feature-species card and wattle shutter button" width="945" height="1828" loading="lazy"></div></div>
+          <div class="inline-phone"><div class="phone"><img src="img/02-capture.webp" alt="The Lifer capture screen: a painterly coastal scene with the feature-species card and wattle shutter button" width="945" height="1828" loading="lazy"></div></div>
         </div>
 
         <div class="ccc-step" data-step="1">
@@ -410,7 +481,7 @@
 <section class="discover section" id="discover" data-screen-label="Discover">
   <div class="wrap discover-grid">
     <div class="discover-phone reveal">
-      <div class="phone"><img src="img/05-discover.webp" alt="The Lifer Discover screen — a searchable list of bird species with photos and scientific names, ticks marking the ones already in your aviary" width="945" height="1832" loading="lazy"></div>
+      <div class="phone"><img src="img/05-discover.webp" alt="The Lifer Discover screen: a searchable list of bird species with photos and scientific names, ticks marking the ones already in your aviary" width="945" height="1832" loading="lazy"></div>
     </div>
     <div class="discover-copy reveal">
       <span class="overline">Discover</span>
@@ -469,7 +540,7 @@
     <div class="footer-top">
       <div class="footer-brand" id="footerBrand" data-lockup="stacked">
         <a class="brand brand-stacked" href="index.html" aria-label="Lifer home">
-          <img class="wordmark-stacked" src="img/wordmark-stacked-dark.svg" alt="Lifer — Capture · Collect · Compete" width="190">
+          <img class="wordmark-stacked" src="img/wordmark-stacked-dark.svg" alt="Lifer - The Birding Game" width="190">
         </a>
         <a class="brand brand-inline" href="index.html" aria-label="Lifer home">
           <img class="mark" src="img/mark.png" alt="" width="38" height="38">
@@ -484,6 +555,7 @@
           <li><a href="#discover">Discover</a></li>
           <li><a href="#local">Your patch</a></li>
           <li><a href="where-to-go.html">Where to go birding</a></li>
+          <li><a href="faq.html">FAQ</a></li>
           <li><a href="#get">Get the app</a></li>
         </ul>
       </div>
