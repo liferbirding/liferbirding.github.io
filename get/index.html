@@ -7,9 +7,11 @@
   install is attributed. Anything that is not an iOS or Android phone sees the two
   store badges instead.
 
-  Everything you might need to edit lives in the EDIT HERE block at the top of the
-  script below: the App Store provider token, the Play package, and the list of
-  recognised sources. Unknown or missing sources are recorded as "direct".
+  The code, and everything you might need to edit (App Store provider token, Play
+  package, recognised sources), lives in /get/smartlink.js, shared with the short
+  paths /ig, /fb, /tiktok and /yt. This page only sets forcedSource, empty here so
+  the source comes from the query string. Unknown or missing sources are recorded
+  as "direct".
 -->
 <html lang="en-AU">
 <head>
@@ -24,96 +26,8 @@
 
   gtag('config', 'G-6XL6ZDMKLL');
 </script>
-<script>
-/* Runs before any stylesheet so the redirect is never held up by a font or CSS fetch. */
-(function () {
-  /* ===================== EDIT HERE ===================== */
-  var APPLE_APP_ID = '6762440686';
-  /* FILL IN: the App Store Connect provider token (the pt= value of a campaign link).
-     While this is empty, iOS is sent to the plain App Store page with no campaign token. */
-  var APPLE_PT = '128785659';
-  var PLAY_PACKAGE = 'com.liferbirding.app';
-  /* Recognised ?src= values. Anything else is recorded as DEFAULT_SOURCE.
-     Apple caps the campaign token at 30 characters, so keep every name within that. */
-  var SOURCES = [
-    'poster-sandspit', 'poster-beach', 'poster-city', 'poster-park', 'poster-bush',
-    'web', 'email', 'ig', 'fb', 'tiktok', 'yt',
-    'test'
-  ];
-  var DEFAULT_SOURCE = 'direct';
-  var ANALYTICS_WAIT_MS = 400;
-  /* ================== end of edit block ================== */
-
-  function appleUrl(src) {
-    if (!APPLE_PT) return 'https://apps.apple.com/app/id' + APPLE_APP_ID;
-    return 'https://apps.apple.com/app/apple-store/id' + APPLE_APP_ID +
-      '?pt=' + encodeURIComponent(APPLE_PT) +
-      '&ct=' + encodeURIComponent(src) +
-      '&mt=8';
-  }
-
-  function playUrl(src) {
-    var referrer = 'utm_source=' + src +
-      '&utm_medium=smartlink' +
-      '&utm_campaign=lifer' +
-      '&utm_content=' + src;
-    return 'https://play.google.com/store/apps/details?id=' + PLAY_PACKAGE +
-      '&referrer=' + encodeURIComponent(referrer);
-  }
-
-  /* Lowercase, keep [a-z0-9-] only, cap at 30, then require a recognised name. */
-  function readSource() {
-    var raw = '';
-    try { raw = new URLSearchParams(location.search).get('src') || ''; } catch (e) { raw = ''; }
-    var clean = raw.toLowerCase().replace(/[^a-z0-9-]/g, '').slice(0, 30);
-    return SOURCES.indexOf(clean) !== -1 ? clean : DEFAULT_SOURCE;
-  }
-
-  /* iOS covers iPhone, iPad, iPod and iPadOS Safari, which reports itself as a Mac with touch. */
-  function detectPlatform() {
-    var ua = navigator.userAgent || '';
-    if (/iPhone|iPad|iPod/.test(ua)) return 'ios';
-    if (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1) return 'ios';
-    if (/Android/.test(ua)) return 'android';
-    return 'other';
-  }
-
-  var src = readSource();
-  var platform = detectPlatform();
-  var apple = appleUrl(src);
-  var play = playUrl(src);
-  var target = platform === 'ios' ? apple : (platform === 'android' ? play : null);
-
-  /* location.replace keeps /get out of the back-button history. Runs once, whichever
-     comes first: the analytics callback or the ANALYTICS_WAIT_MS timer. */
-  var sent = false;
-  function go() {
-    if (sent || !target) return;
-    sent = true;
-    location.replace(target);
-  }
-
-  if (typeof gtag === 'function') {
-    if (target) setTimeout(go, ANALYTICS_WAIT_MS);
-    gtag('event', 'smartlink', { src: src, platform: platform, event_callback: go });
-  } else {
-    go();
-  }
-
-  /* Non-mobile: point the two badges at the store URLs for this src once the body exists. */
-  function fillLinks() {
-    var a = document.getElementById('appleLink');
-    var p = document.getElementById('playLink');
-    if (a) a.href = apple;
-    if (p) p.href = play;
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', fillLinks);
-  } else {
-    fillLinks();
-  }
-})();
-</script>
+<script>window.LIFER_SMARTLINK = { forcedSource: '' };</script>
+<script src="/get/smartlink.js"></script>
 <title>Get Lifer - The Birding Game</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://liferbirding.com/get/">
