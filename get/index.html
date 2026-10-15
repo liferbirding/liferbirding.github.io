@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--
+  /get  SMART LINK. The single target of every QR code and store badge Lifer publishes.
+
+  iPhone and iPad go to the App Store, Android goes to Google Play, and the source
+  that sent the visitor (?src=NAME) is recorded in GA4 and handed to the store so the
+  install is attributed. Anything that is not an iOS or Android phone sees the two
+  store badges instead.
+
+  Everything you might need to edit lives in the EDIT HERE block at the top of the
+  script below: the App Store provider token, the Play package, and the list of
+  recognised sources. Unknown or missing sources are recorded as "direct".
+-->
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6XL6ZDMKLL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6XL6ZDMKLL');
+</script>
+<script>
+/* Runs before any stylesheet so the redirect is never held up by a font or CSS fetch. */
+(function () {
+  /* ===================== EDIT HERE ===================== */
+  var APPLE_APP_ID = '6762440686';
+  /* FILL IN: the App Store Connect provider token (the pt= value of a campaign link).
+     While this is empty, iOS is sent to the plain App Store page with no campaign token. */
+  var APPLE_PT = '128785659';
+  var PLAY_PACKAGE = 'com.liferbirding.app';
+  /* Recognised ?src= values. Anything else is recorded as DEFAULT_SOURCE.
+     Apple caps the campaign token at 30 characters, so keep every name within that. */
+  var SOURCES = [
+    'poster-sandspit', 'poster-beach', 'poster-city', 'poster-park', 'poster-bush',
+    'web', 'email', 'ig', 'fb', 'tiktok', 'yt',
+    'test'
+  ];
+  var DEFAULT_SOURCE = 'direct';
+  var ANALYTICS_WAIT_MS = 400;
+  /* ================== end of edit block ================== */
+
+  function appleUrl(src) {
+    if (!APPLE_PT) return 'https://apps.apple.com/app/id' + APPLE_APP_ID;
+    return 'https://apps.apple.com/app/apple-store/id' + APPLE_APP_ID +
+      '?pt=' + encodeURIComponent(APPLE_PT) +
+      '&ct=' + encodeURIComponent(src) +
+      '&mt=8';
+  }
+
+  function playUrl(src) {
+    var referrer = 'utm_source=' + src +
+      '&utm_medium=smartlink' +
+      '&utm_campaign=lifer' +
+      '&utm_content=' + src;
+    return 'https://play.google.com/store/apps/details?id=' + PLAY_PACKAGE +
+      '&referrer=' + encodeURIComponent(referrer);
+  }
+
+  /* Lowercase, keep [a-z0-9-] only, cap at 30, then require a recognised name. */
+  function readSource() {
+    var raw = '';
+    try { raw = new URLSearchParams(location.search).get('src') || ''; } catch (e) { raw = ''; }
+    var clean = raw.toLowerCase().replace(/[^a-z0-9-]/g, '').slice(0, 30);
+    return SOURCES.indexOf(clean) !== -1 ? clean : DEFAULT_SOURCE;
+  }
+
+  /* iOS covers iPhone, iPad, iPod and iPadOS Safari, which reports itself as a Mac with touch. */
+  function detectPlatform() {
+    var ua = navigator.userAgent || '';
+    if (/iPhone|iPad|iPod/.test(ua)) return 'ios';
+    if (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1) return 'ios';
+    if (/Android/.test(ua)) return 'android';
+    return 'other';
+  }
+
+  var src = readSource();
+  var platform = detectPlatform();
+  var apple = appleUrl(src);
+  var play = playUrl(src);
+  var target = platform === 'ios' ? apple : (platform === 'android' ? play : null);
+
+  /* location.replace keeps /get out of the back-button history. Runs once, whichever
+     comes first: the analytics callback or the ANALYTICS_WAIT_MS timer. */
+  var sent = false;
+  function go() {
+    if (sent || !target) return;
+    sent = true;
+    location.replace(target);
+  }
+
+  if (typeof gtag === 'function') {
+    if (target) setTimeout(go, ANALYTICS_WAIT_MS);
+    gtag('event', 'smartlink', { src: src, platform: platform, event_callback: go });
+  } else {
+    go();
+  }
+
+  /* Non-mobile: point the two badges at the store URLs for this src once the body exists. */
+  function fillLinks() {
+    var a = document.getElementById('appleLink');
+    var p = document.getElementById('playLink');
+    if (a) a.href = apple;
+    if (p) p.href = play;
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fillLinks);
+  } else {
+    fillLinks();
+  }
+})();
+</script>
+<title>Get Lifer - The Birding Game</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://liferbirding.com/get/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/lifer-site.css">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/img/icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+<style>
+.get-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:64px 24px;background:var(--ink);}
+.get-inner{display:flex;flex-direction:column;align-items:center;gap:26px;}
+.get-name{color:var(--night-text);font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:-.01em;}
+.get-wrap .store-row{justify-content:center;}
+.get-line{color:var(--night-text-2);font-size:15px;line-height:1.6;}
+</style>
+</head>
+<body>
+<main class="get-wrap">
+  <div class="get-inner">
+    <img class="wordmark-stacked" src="/img/wordmark-stacked-dark.svg" alt="Lifer" width="243" height="125">
+    <p class="get-name">Lifer - The Birding Game</p>
+    <div class="store-row">
+      <a class="store-badge" id="appleLink" href="https://apps.apple.com/app/id6762440686" target="_blank" rel="noopener"><img src="/img/badge-appstore.svg" alt="Download on the App Store" width="156" height="52"></a>
+      <a class="store-badge" id="playLink" href="https://play.google.com/store/apps/details?id=com.liferbirding.app&amp;referrer=utm_source%3Ddirect%26utm_medium%3Dsmartlink%26utm_campaign%3Dlifer%26utm_content%3Ddirect" target="_blank" rel="noopener"><img src="/img/badge-googleplay.webp" alt="Get it on Google Play" width="175" height="52"></a>
+    </div>
+    <p class="get-line">Free on iOS and Android.</p>
+  </div>
+</main>
+</body>
+</html>
